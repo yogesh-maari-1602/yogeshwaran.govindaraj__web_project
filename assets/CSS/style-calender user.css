@@ -1,0 +1,63 @@
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff38c;
+    background-size: cover;
+}
+.calender{
+    margin: auto;
+    max-width: 800px;
+    font-family: sans-serif;
+    font-weight: bold;
+     color: black;
+     margin-top: 15%;
+    background-color: #c0b236;
+     border-radius: 25px;
+    
+    
+}
+.month{
+text-align: center;
+background: #c0b236;
+font-size: 40px;
+letter-spacing: 3px;
+color: black;
+margin-top: 20px;
+
+ }
+ table, th, td{
+   width: 100%; 
+   table-layout: fixed;
+   text-align: center;
+   font-size: 27px;
+   border-collapse:collapse;
+   
+   font-family: initial;
+ }
+ tr, th, td{
+    padding: 15px;
+ } 
+ th{
+    background-color: white;
+    color: black;
+    font-family: initial;
+ }
+ td{
+
+    color: black;
+    
+ }
+ td:hover{
+    background-color: bisque;
+ }
+ .month p{
+   margin-left: -550px;
+   font-size: 16px;
+margin-top: 6px;
+margin-bottom: 10px;
+ }
+ 
+
