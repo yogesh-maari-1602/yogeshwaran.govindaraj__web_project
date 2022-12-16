@@ -6,7 +6,7 @@
 
     body {
         background-image: linear-gradient(#e1b382,#e1b382);
-        background: cover;
+        background-size: cover;
     }
 
     .container {
