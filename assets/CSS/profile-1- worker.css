@@ -1,12 +1,14 @@
 body {
     font-size: 30px;
+background-image: linear-gradient(#e1b382,#e1b382);
 }
 html{
     overflow-x: hidden;
 }
 .profile {
     display: flex;
-    background-color: #FFF38c;
+    background-color: #f0e161;
+    border-radius: 15px;
     height: 500px;
 
     

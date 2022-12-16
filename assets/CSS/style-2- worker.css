@@ -9,7 +9,7 @@ html{
 }
 
 body{
-    background-color: #FFF38c;
+    background-image: linear-gradient(#e1b382,#e1b382);
     width: 1490px;
     height: 700px;
     margin-top: -250px;

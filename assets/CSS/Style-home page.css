@@ -5,7 +5,8 @@
     text-decoration: none;
 }
 body{
-    background-color: #Fff38c;
+    background-image: linear-gradient(#e1b382,#e1b382);
+    
 }
 html{
     overflow-x: hidden;
@@ -20,7 +21,7 @@ html{
 
 .header{
     display: flex;
-    background-color: #F0E161;
+    background-color: #f4ec94;
     font-size: 10px;
     height: 100px;
     border: solid 2px black;
@@ -66,12 +67,13 @@ html{
     color: white;
     position: relative;
     cursor: pointer;
-    box-shadow: 3px 3px black;
     
 }
 .button{
     display: flex;
-    
+}
+.button button:hover{
+    box-shadow: 10px 10px 10px 10px;
 }
 
 
@@ -233,7 +235,7 @@ html{
     
 }
 .background{
-    background-color: #D9cB50;
+    background-color: #ece496;
     width: 400px;
     margin-left: 60px;
     border-radius: 30px;
@@ -274,7 +276,7 @@ html{
     font-size: 25px;
     display: flex;
     justify-content: space-evenly;
-    border: #c0b236;
+    border: #ece498;
     
 }
 .two-steps h2, p{
@@ -284,7 +286,7 @@ html{
 
 }
 .background-1{
-    background-color: #D9cB50;
+    background-color: #ede283;
     width: 400px;
     border-radius: 10px;
 }
@@ -310,11 +312,11 @@ html{
   font-size: 25px;
   align-content: space-between;
   bottom: 00px;
-  background-color: #D9cB50;
+  background-color: #a4e28a;
   color: white;
-  width: 95%;
-  border-radius: 50px;
-  margin-left: 50px;
+  width: 100%;
+
+border-radius: 10px;
   margin-top: 50px;
 }
 .foot-1 {
@@ -357,18 +359,7 @@ html{
 .header-1 a:hover {
  color: white;
 }
-.dropdown .header-1 {
-    display: block;
-}
-.dropdown p {
-    color: white;
-    font-weight: bold;
-    margin-right: 50px;
-}
-.dropdown {
-    display: inline-block;
-    position: relative;
-}
+
 .contain {
     display: flex;
     margin-left: 40px;
@@ -388,4 +379,7 @@ html{
     text-shadow: 1px 1px 2px red, 0 0 1em green, 0 0 0.2em blue;
     font-weight: 550px;
     
+}
+.contain nav a:hover{
+    color: black
 }
