@@ -64,7 +64,8 @@ html{
     border: none;
     border-radius: 10px;
     font-size: 20px;
-    color: white;
+    font-weight: bold;
+    color: black;
     position: relative;
     cursor: pointer;
     
@@ -235,7 +236,7 @@ html{
     
 }
 .background{
-    background-color: #ece496;
+    background-color: white;
     width: 400px;
     margin-left: 60px;
     border-radius: 30px;
@@ -254,7 +255,8 @@ html{
 }
 .down p{
     margin-left: 10px;
-    color: white;
+    color: black;
+    font-weight: bolder;
 }
 .our-team{
      margin-top: 250px;
@@ -291,11 +293,11 @@ html{
     border-radius: 10px;
 }
 .background-1 h3{
-    color: white;
+    color: black;
     margin-left: 30px;
 }
 .background-1 h2{
-    color: white;
+    color: rgba(186, 62, 62, 0.847);
     margin-left: 40px;
 }
 .background-1 p{
@@ -313,8 +315,9 @@ html{
   align-content: space-between;
   bottom: 00px;
   background-color: #a4e28a;
-  color: white;
-  width: 100%;
+  color: black;
+  width: 96%;
+  margin-left: 40px;
 
 border-radius: 10px;
   margin-top: 50px;
@@ -323,21 +326,23 @@ border-radius: 10px;
   margin-left: 200px;
   
 }
-.foot-1 i{
-    margin-top: 15px;
-    margin-bottom: 10px;
+.foot-1 i,li{
+    
+    list-style: none;
 }
 
 .foot-2 {
   margin-left: 400px;
 }
-.foot-2 i{
-    margin-top: 15px;
-    margin-bottom: 12px;
+.foot-2 i, li{
+    
+    list-style: none;
+    
 }
 .foot h4 {
   color: black;
   font-size: 27px;
+  font-weight: bold;
 }
 
 .header-1{
