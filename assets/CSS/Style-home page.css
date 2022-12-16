@@ -93,7 +93,7 @@ html{
     border: none;
     border-radius: 10px;
     font-size: 40px;
-    color: white;
+    color: black;
     cursor: pointer;
     font-weight: bolder;
     z-index: 10px;
@@ -294,7 +294,7 @@ html{
 }
 .background-1 h3{
     color: black;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 .background-1 h2{
     color: rgba(186, 62, 62, 0.847);
@@ -311,7 +311,7 @@ html{
 }
 .foot {
   display: flex;
-  font-size: 25px;
+  font-size: 30px;
   align-content: space-between;
   bottom: 00px;
   background-color: #a4e28a;
@@ -334,7 +334,7 @@ border-radius: 10px;
 .foot-2 {
   margin-left: 400px;
 }
-.foot-2 i, li{
+.foot-2 i,li{
     
     list-style: none;
     
@@ -344,6 +344,7 @@ border-radius: 10px;
   font-size: 27px;
   font-weight: bold;
 }
+
 
 .header-1{
     display: none;
