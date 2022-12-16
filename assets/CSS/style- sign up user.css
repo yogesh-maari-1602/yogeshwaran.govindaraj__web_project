@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color: #fff38c;
+    background: cover;
+    font-family: sans-serif;
+
+}
+.container{
+    margin-top: 200px;
+margin-left: 500px;
+margin-right: 600px;
+background-color: #f0e161;
+padding: 35px;
+width: 500px;
+height: 500px;
+border-radius: 25px;
+font-size: 20px
+}
+.container input {
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+h1{
+    text-align: center;
+    top: 10px;
+    margin-top: -20px;
+}
+p{
+    text-align: center;
+}
+.clearfix{
+    margin-left: 150px;
+    margin-top: 20px;
+    
+}
+.cancelbtn{
+    width: 100px;
+    padding: 13px;
+    font-size: 17px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+.cancelbtn:hover{
+    background-color: wheat;
+    color: black;
+    opacity: 0.7;
+}
+.cancelbtn:active{
+    background-color: lawngreen;
+}
+
+.signupbtn{
+    width: 100px;
+    padding: 13px;
+    font-size: 17px;
+    background-color: rgb(20, 20, 244);
+    color: white;
+    border: none;
+    border-radius: 25px;
+}
+.signupbtn:hover{
+    background-color: white;
+    color: black;
+    opacity: 0.7;
+}
+.signupbtn:active{
+    background-color: lawngreen;
+}
+
+
+.container span{
+    margin-left: 150px;
+}
