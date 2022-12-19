@@ -27,6 +27,10 @@ html{
     font-size: 25px;
     border-radius: 10px;
 }
+.contain button:hover{
+    background-color: skyblue;
+}
+
 .header{
     display: flex;
     background-color: #f7f7f7;
