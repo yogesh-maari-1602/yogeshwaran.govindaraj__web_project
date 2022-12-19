@@ -4,19 +4,22 @@
     font-family: sans-serif;
 }
 body{
-    background-image: linear-gradient(#e1b382,#e1b382);
+    background-image:#f3f3f3;
     background-size: cover;
 }
 .details{
     margin-top: 45px;
     margin-left: 500px;
     margin-right: 600px;
-    background-color: #f0e161;
+    background-color: #f5f5f5;
     padding: 35px;
     width: 500px;
     height: 750px;
     border-radius: 25px;
     font-size: 20px;
+}
+.details h1{
+    text-align: center;
 }
 .photo{
     margin-left: 10px;
@@ -52,15 +55,15 @@ margin-top: -220px;
 
 .collection h3{
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 25px;
     margin-left: -25px;
-    color: purple;
+    color: #0b1320;
 }
 .dust-bin h3{
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 20px;
     margin-left: -25px;
-    color: purple;
+    color: #0b1320;
 }
    
 .collection input{
