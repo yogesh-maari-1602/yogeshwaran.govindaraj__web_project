@@ -15,10 +15,11 @@
         <h1>Log In!</h1>
         <hr>
         <label for="email"><b>Email</b></label><br>
-        <input type="email" placeholder="Enter User email" name="email" required><br>
+        <input type="email" placeholder="Enter User email" name="email" required
+            value="yogeshwaran.govindaraj@fssa.freshworks.com" id="email"><br>
 
         <label for="psw"><b>Password</b></label><br>
-        <input type="password" placeholder="Enter Password" name="psw" required><br>
+        <input type="password" placeholder="Enter Password" name="psw" required value="@maari#" id="password"><br>
 
         <a href="../pages/worker list.html"><button type="submit">Login</button></a><br>
         <hr>
@@ -29,6 +30,17 @@
             <p>Forgot Password?</p>
         </div>
     </div>
+
+
+
+    <!--java-->
+    <script>
+        const email = document.getElementById("email").value
+        const password = document.getElementById("password").value
+
+        console.log(email)
+        console.log(password)
+    </script>
 
 </body>
 

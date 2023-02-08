@@ -13,7 +13,7 @@
 
     <h1 class="our-team">Workers id</h1>
     <div class="photo-section">
-        <div class="background">
+        <!-- <div class="background">
             <div class="img">
                 <a href="../pages/Profile-1.html"><img alt="image"
                         src="https://ca.slack-edge.com/T032648LE-U041V4TRAM9-a4010cb46546-512" width="300px"></a>
@@ -208,9 +208,9 @@
                     Ph.7943589014
                 </p>
             </div>
-        </div>
+        </div> -->
 
-        <div class="background">
+        <!-- <div class="background">
             <div class="img">
                 <a href="../pages/profile-12.html"><img alt="image"
                         src="https://ca.slack-edge.com/T032648LE-U041S8WSF29-9b28e1a65221-512" width="300px"></a>
@@ -225,9 +225,99 @@
                     Ph.638084300
                 </p>
             </div>
-        </div>
+        </div> -->
     </div>
 
+
+
+
+    <!--java script-->
+    <script>
+        // Json//
+        const worker_id = [
+            {
+                image: "https://ca.slack-edge.com/T032648LE-U041V4TRAM9-a4010cb46546-512",
+                alt: "image",
+                name: "Yogeshwaran",
+                phone_number: "638084300",
+            },
+
+
+
+            {
+                image: "https://ca.slack-edge.com/T032648LE-U041V838E74-a1111be2d28e-512",
+                alt: "image",
+                name: "Bhirahatees",
+                phone_number: "9626679401",
+            },
+
+
+            {
+                image: "https://ca.slack-edge.com/T032648LE-U042JUK1M6C-27d5b4326663-512",
+                alt: "image",
+                name: "Karthik",
+                phone_number: "9150328692",
+            },
+
+            {
+                image: "https://ca.slack-edge.com/T032648LE-U041XM0M9N0-560074dc5510-512",
+                alt: "image",
+                name: "Sridevan",
+                phone_number: "9150238692",
+            },
+            {
+                image: "https://ca.slack-edge.com/T032648LE-U04291URDLH-b4bc56dd9156-512",
+                alt: "image",
+                name: "Ajay kumar",
+                phone_number: "9620238692",
+            },
+            {
+                image: "https://ca.slack-edge.com/T032648LE-U041XM05TC4-0f04e388aca2-512",
+                alt: "image",
+                name: "Arun kumar",
+                phone_number: "9626638692",
+            },
+
+
+        ]
+
+        for (let i = 0; i < worker_id.length; i++) {
+            let content = document.createElement("div");
+            content.setAttribute("class", "background");
+
+
+            let image_div = document.createElement("div");
+            image_div.setAttribute("class", "img");
+            content.append(image_div);
+
+            let image = document.createElement("img");
+            image.setAttribute("width", "300px");
+            image.setAttribute("src", worker_id[i]["image"]);
+            image.setAttribute("alt", "image");
+            image_div.append(image);
+
+            let details = document.createElement("div");
+            details.setAttribute("class", "down");
+
+
+            let name = document.createElement("h3");
+            name.innerText = worker_id[i]["name"];
+            details.append(name);
+
+            let number = document.createElement("p");
+            number.innerText = worker_id[i]["phone_number"];
+            details.append(number);
+            content.append(details);
+
+
+
+            document.querySelector(".photo-section").prepend(content);
+            console.log(details, content)
+        }
+
+
+
+    </script>
 </body>
 
 </html>
