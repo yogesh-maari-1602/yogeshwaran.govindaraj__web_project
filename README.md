@@ -5,4 +5,4 @@ register page [completed]
 login page [completed]
 profile page [completed]
 profile edit [completed]
-delete user [pending]
+delete user [pending](1day)
