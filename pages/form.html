@@ -2,75 +2,109 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <title>form table</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/CSS/style-request user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>REQUEST FORM </title>
+
+
+    <style>
+        .button {
+            display: flex;
+            margin-right: 30px;
+        }
+
+        .btn-1 {
+            margin-left: 30px;
+        }
+
+        .btn-2 {
+            margin-left: 30px;
+        }
+
+        .btn-3 {
+            margin-left: 20px;
+        }
+    </style>
+
 </head>
 
 <body>
-    <!-- <div class="container">
-        <h2>User profile</h2>
-        <form action="/action_page.php">
-            <div class="form-group">
-                <label for="user name">User name:</label>
-                <input type="user name" class="form-control" id="username" name="username">
+    <div class="details">
+        <h1>Fill the Details</h1>
+        <hr>
+        <form>
+
+
+            <div class="photo">
+                <div><i class="fa fa-add"></i></div>
+                <p>Upload photo</p>
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email">
+
+            <div class="address">
+
+                <label>FirstName:</label><br />
+                <input type="text" placeholder="Enter your name" id="Fname" /><br />
+
+                <label>LastName:</label><br />
+                <input type="text" placeholder="Enter your name" id="Lname" /><br />
+
+                <label>Email:</label><br />
+                <input type="user_Email" placeholder="Enter your name" id="email" /><br />
+
+                <label>Phone no:</label><br />
+                <input type="tel" placeholder="Enter your number" maxlength="10" id="phone number" /><br />
+
+                <label>Address</label><br />
+                <input type="text" placeholder="Enter your address" id="address" /><br />
             </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="text" class="form-control" id="pwd" name="pswd">
+
+            <div class="button">
+                <button class="btn-1">edit</button>
+                <button class="btn-2"> submit</button>
+
+                <button class="btn-3">detail</button>
             </div>
-            <div class="form-group">
-                <label for="pwd">Phone number:</label>
-                <input type="phone number" class="form-control" id="phonenumber" name="pswd">
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="remember"> Remember me
-                </label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div> -->
 
 
-
-    <div class="button">
-        <form id="form">
-            <input type="text" id="First_Name" placeholder="First Name" /><br />
-            <input type="text" id="Last_Name" placeholder="Last Name" /><br />
-            <input type="number" id="Phone_number" placeholder="Phone Number" /><br />
-            <input type="email" id="email" placeholder="Email@gmail.com" /><br />
-
-            <input type="password" id="pwd" placeholder="Email@gmail.com" /><br />
-
-            <input type="date" id="DOB" placeholder="Date Of birth" /><br />
-            <input type="text" id="Home_Address" placeholder="Home Address" /><br />
-            <input type="text" id="Land_Address" placeholder="Land Address" /><br />
-            <input type="checkbox" id="gender" value="Male" /> Male
-            <input type="checkbox" id="gender" value="Female" /> Female <br />
-            <input type="checkbox" id="farmer" value="Tenant" /> Tenant Farmer
-            <input type="checkbox" id="farmer" value="Owner" /> Land Holder <br />
-            <input type="number" id="Aadhar_number" placeholder="Aadhar_number" /><br />
-        </form>
-    </div>
-
-    <script>
-        let profilevalue = JSON.parse(window.localStorage.getItem("login_user"));
-
-        document.getElementById("email").value = profilevalue[0]["email"];
-        document.getElementById("pwd").value = profilevalue[0]["password"];
-
-
-
-    </script>
 </body>
+
+
+
+<script>
+    // For email
+
+    let current_email = JSON.parse(localStorage.getItem("login_user"))
+
+    //for arrya
+
+    let user_about = JSON.parse(localStorage.getItem("user_info"))
+
+    let user_Obj = user_about.find(function (user) {
+        let check_email = user["email"]
+
+        if (current_email === check_email) {
+
+            return true;
+        }
+
+    })
+
+
+    // console.log(user_obj)
+
+
+    let email = document.getElementById("email");
+
+    email.value = current_email;
+
+
+
+
+</script>
 
 </html>
