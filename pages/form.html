@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    <div class="details">
+    <div class="details" id="form">
         <h1>Fill the Details</h1>
         <hr>
         <form>
@@ -63,7 +63,7 @@
                 <input type="text" placeholder="Enter your address" id="address" /><br />
             </div>
 
-            <div class="button">
+            <div class="button" id="button">
                 <button class="btn-1">edit</button>
                 <button class="btn-2"> submit</button>
 
@@ -76,31 +76,31 @@
 
 
 <script>
-    // For email
-
-    let current_email = JSON.parse(localStorage.getItem("login_user"))
-
-    //for arrya
-
-    let user_about = JSON.parse(localStorage.getItem("user_info"))
-
-    let user_Obj = user_about.find(function (user) {
-        let check_email = user["email"]
-
-        if (current_email === check_email) {
-
-            return true;
-        }
-
-    })
+    let user_obj = document.getElementById("form");
+    document.createElement("user_info")
 
 
-    // console.log(user_obj)
+    user_obj.addEventListener("submit".function(event)){
+        event.preventDefault();
+        let array = []
+
+        if (localStorage.getItem() != null)
+            array = JSON.parse(localStorage.getItem("user_info"));
+    }
+
+    let match = false;
+    const id = Date.now();
+    console.log(id);
+
+    const first_name = document.getElementById("Fname").value;
+    const last_name = document.getElementById("Lname").value;
+    const email = document.getElementById("email").value.toLowercase();
+    const phone_number = document.getElementById("phone number").value;
+    const address = document.getElementById("address").value;
 
 
-    let email = document.getElementById("email");
 
-    email.value = current_email;
+
 
 
 

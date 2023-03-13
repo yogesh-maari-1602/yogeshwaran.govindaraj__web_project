@@ -32,7 +32,8 @@
             <hr>
             <div class="clearfix">
                 <button class="cancelbtn">Cancel</button>
-                <button class="signupbtn" type="submit">SIGN-IN</button>
+                <a href="/pages/login-user.html"> <button onclick="submit()" class="signupbtn"
+                        type="submit">SIGN-IN</button></a>
             </div>
         </div>
     </form>
@@ -94,6 +95,9 @@
         });
 
 
+        function submit() {
+            window.location.href = "/pages/login-user.html"
+        }
 
 
 
