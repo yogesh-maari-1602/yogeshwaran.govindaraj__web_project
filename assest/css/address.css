@@ -1,0 +1,116 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    background-image:#f3f3f3;
+    background-size: cover;
+}
+.details{
+    margin-top: 45px;
+    margin-left: 500px;
+    margin-right: 600px;
+    background-color: #f5f5f5;
+    padding: 35px;
+    width: 500px;
+    height: 700px;
+    /* border-radius: 25px; */
+    font-size: 20px;
+}
+.details h1{
+    text-align: center;
+}
+.photo{
+    margin-left: 150px;
+    border-radius: 200px;
+    margin-top: 30px;
+    
+}
+.address{
+margin-left: 50px;
+margin-top: 30px;
+
+}
+.address label{
+   font-size: 30px;
+   
+}
+.address input{
+    padding: 15px;
+     font-size: 20px;
+    border: none;
+    box-sizing: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.collection{
+     margin-top: 10px;
+     margin-left: 20px;
+}
+
+.collection h3{
+    font-weight: bolder;
+    font-size: 25px;
+    margin-left: -25px;
+    color: #0b1320;
+}
+.dust-bin h3{
+    font-weight: bolder;
+    font-size: 20px;
+    margin-left: -25px;
+    color: #0b1320;
+}
+   
+.collection input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+.dust-bin{
+    margin-top: 10px;
+    margin-left: 20px;
+}
+.dust-bin input{
+    margin-bottom: 10px;
+
+}
+button{
+    margin-top: 45px;
+    margin-left: 70px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 13px;
+    width: 380px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(17, 119, 183);
+    color: white;
+}
+
+
+button:active{
+    background-color: lightgreen;
+}
+
+/* .btn-1{
+    background-color: white;
+    color: black;
+    margin-left: 70px;
+
+} */
+
+/* .btn-3{
+    background-color: red;
+} */
+
+
+fieldset{
+    border: none;
+}
+
+textarea{
+    font-size: 20PX;
+}

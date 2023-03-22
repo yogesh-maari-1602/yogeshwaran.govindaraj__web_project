@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* background-image:url(./istockphoto-1193475660-612x612\ time\ page.jpg); */
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 875px;
+   
+}
+
+
+
+.full-page{
+    margin-left:470px;
+    margin-top: 20px;
+    background-size: 30px;
+    background-color: #615e5e88;
+    padding: 50px;
+    width: 26%;   
+    height: 720px; 
+   
+}
+
+.full-page h1{
+    font-size: 40px;
+    /* margin: 10px; */
+    margin-top: -20px;
+    text-align: center;
+    /* margin-bottom: 10px; */
+    color: white;
+}
+
+.full-page button{
+    padding: 20px;
+    width: 70%;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(16, 183, 238);
+    /* margin-top: 30px; */
+    margin-top: 45px;
+    margin-left: 40px;
+}
+
+.full-page button:hover{
+    background-color: rgb(180, 233, 180);
+    opacity: 1s;
+    color: white;
+}
+
+label{
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    /* margin-top: 20px; */
+    /* margin-top: 30px; */
+}
+
+input{
+    padding: 15px;
+    width: 30%;
+    margin-top: 30px;
+    /* font-size: 30px; */
+   
+}
+
+
+
+p{
+    margin-top: 10%;
+    font-size: 25px;
+    margin-left: 40px;
+    color: white;
+}
+
+#phone{
+    width: 80%;
+}
+
+textarea{
+    font-size: 18px;
+}
+
+#phone{
+    font-size: 20px;
+}
+
+

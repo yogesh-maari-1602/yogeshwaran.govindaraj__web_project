@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/user booking list.css">
+    <title>User booking time</title>
+</head>
+
+<body>
+    <!-- <div class="full-page">
+
+
+
+        <div class="off-page">
+            <h1>User booking details</h1>
+
+            <div class="grp-list">
+
+                <div>
+                    <p>1</p>
+                    <p>21, Sabari Street, Nesapakkam,. K.K. Nagar West, Chennai - 600 078.</p><br>
+                    <p>Ph: 6380843013</p>
+                    <p>16.02.23</p>
+
+                </div>
+                <div>
+                    <input type="checkbox" id="box" name="box" value="Bike">
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+    <script>
+        let Card = JSON.parse(localStorage.getItem("pick"))
+
+        for (let i = 0; i < Card.length; i++) {
+
+            let div_card = document.createElement("div");
+            div_card.setAttribute("class", "full-page");
+
+            let div_h1 = document.createElement("div");
+            div_h1.setAttribute("class", "off-page");
+            div_card.append(div_h1);
+
+            let h1 = document.createElement("h1");
+            h1.innerText = "User booking details"
+            div_h1.append(h1);
+
+
+            let div_list = document.createElement("div");
+            div_list.setAttribute("class", "grp-list");
+            div_h1.append(div_list);
+
+            let div_full = document.createElement("div");
+            div_list.append(div_full);
+
+            let p0 = document.createElement("p");
+            p0.innerText = Card[i]["address"]
+            div_full.append(p0);
+
+
+            let p1 = document.createElement("p");
+            p1.innerText = Card[i]["phonenumber"]
+            div_full.append(p1);
+
+            let p2 = document.createElement("p");
+            p2.innerText = Card[i]["time"]
+            div_full.append(p2);
+
+            let p3 = document.createElement("p");
+            p3.innerText = Card[i]["date"]
+            div_full.append(p3);
+
+
+
+
+            let last_div = document.createElement("div");
+            div_list.append(last_div);
+
+            let input = document.createElement("input");
+            input.setAttribute("type", "checkbox")
+            input.setAttribute("id", "box")
+            input.setAttribute("name", "box")
+            input.setAttribute("value", "Bike")
+            last_div.append(input)
+
+            document.querySelector("body").append(div_card);
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

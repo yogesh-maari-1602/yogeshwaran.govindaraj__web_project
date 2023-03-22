@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/pick.css">
+    <title>Pick the garbage list</title>
+</head>
+
+<body>
+
+    <div class="full-page">
+
+
+
+        <h1>Pick the garbage</h1><br><br>
+        <hr>
+
+        <form id="form">
+            <br>
+            <label for="subject">Home Address:</label><br><br>
+            <textarea id="subject" name="subject" placeholder="Fill address" rows="8" cols="40"></textarea><br><br>
+
+            <label for="phone">Enter your phone number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter the Number" maxlength="10">
+
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"><br><br>
+
+            <label for="appt">Time:</label>
+            <input type="time" id="appt" name="appt" min="9:00" max="6:00" required><br><br>
+
+            <!-- <p>Office hours are 9am to 6pm</p><br><br> -->
+
+
+
+            <button type="submit" onclick="pass()">Pick the garbage</button>
+
+        </form>
+
+
+    </div>
+
+
+    <script>
+
+
+        let form = document.getElementById("form")
+        document.createElement("pick")
+        form.addEventListener("submit", function (event) {
+            event.preventDefault()
+
+
+            // const user = "user_info";
+            let array = []
+            if (localStorage.getItem("pick") != null) {
+                array = JSON.parse(localStorage.getItem("pick"));
+            }
+
+            let match = false;
+
+            const time = document.getElementById("appt").value
+            const address = document.getElementById("subject").value
+            const phonenumber = document.getElementById("phone").value
+            const date = document.getElementById("date").value
+
+
+            let userobject = {
+
+                address,
+                phonenumber,
+                time,
+                date,
+            };
+
+            array.push(userobject)
+            const str = JSON.stringify(array);
+            localStorage.setItem("pick", str);
+
+            console.log(str);
+
+        });
+
+
+        function pass() {
+            window.location.href = "/pages/calenderdemo.html"
+        }
+
+    </script>
+    <a href="../pages/calenderdemo.html"></a>
+
+    <!-- <a href="./user booking  list.html"></a> -->
+</body>
+
+</html>

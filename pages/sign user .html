@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/sign page user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>SignUp</title>
+</head>
+
+<body>
+    <div class="container1">
+
+        <form id="form">
+
+            <div class="main1">
+
+                <h1>Sign up </h1>
+
+                <p class="sim"> User Name</p>
+                <input type="text" id="username" required>
+
+
+                <p class="sim1">Email</p>
+                <input type="email" id="email" required>
+
+                <p class="sim3"> Password</p>
+                <input type="password" id="password" required>
+
+                <p class="sim2"> Confirm Password</p>
+                <input type="password" id="password" required>
+
+                <button onclick="submit()" class="btn" type="submit" id="signupbtn">Sign
+                    Up</button>
+
+                <div class="link">
+                    <p>Don't have an Account? <a href="../pages/login user page.html">Log In→</a></p>
+                </div>
+
+
+                <a href="../pages/login user page.html"></a>
+
+                <!-- icon -->
+                <div class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // -----------------
+        document.getElementById('form')
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const USER_INFO_KEY = 'user_info';
+            let users = []
+            if (USER_INFO_KEY in localStorage) {
+                users = JSON.parse(localStorage.getItem(USER_INFO_KEY));
+            }
+            let userObject = {
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value,
+                // confirmPassword: document.getElementById('confirmpassword').value,
+            };
+            users.push(userObject);
+            localStorage.setItem(USER_INFO_KEY, JSON.stringify(users));
+            console.log('appended to the local storage.');
+
+            window.location.href = "/pages/login user page.html";
+
+        });
+
+        function submit() {
+
+        }
+
+
+
+
+    </script>
+
+    <a href="../pages/login user page.html"></a>
+
+</body>
+
+</html>

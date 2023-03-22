@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/login user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <form id="login">
+
+            <div class="main">
+
+                <h1>Log In </h1>
+
+                <p class="sim"> Username</p>
+                </label><input name="username" type="text" id="username" required>
+
+                <p class="sim1"> Email</p>
+                <input name="email" type="email" id="email" required>
+
+                <p class="sim2"> Password</p>
+                <input name="password" type="password" id="password" required>
+
+                <a href="./address.html"> <button onclick="submit()" class="btn" type="submit">Log-in</button></a>
+
+                <div class="link">
+
+                    <p>Don't have an Account? <a href="../pages/sign user .html">Sign-up→</p>
+                    </a>
+                </div>
+
+
+                <!-- icon -->
+                <div class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+        let logIn = document.getElementById("login");
+        logIn.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            let user_arr = [];
+
+            let defaultData = JSON.parse(localStorage.getItem("user_info"));
+            console.log(defaultData);
+
+
+            let username = document.getElementById("username").value
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            console.log(username, email, password);
+
+            //   [  { }, {}, {}, {}, {0}, {} ]
+
+            let isMatch = false;
+
+            for (let i = 0; i < defaultData.length; i++) {
+                if (
+                    email == defaultData[i].email &&
+                    password == defaultData[i].password
+                ) {
+                    isMatch = true;
+
+                    user_arr.push(defaultData[i]);
+                    window.localStorage.setItem("login_user", JSON.stringify(user_arr));
+
+                    break;
+
+                } else {
+                    isMatch = false;
+                }
+            }
+
+
+            if (isMatch === true) {
+                alert("success")
+
+                // window.location.href = "";
+            } else {
+                alert("failed")
+                // window.location.href ="";
+            }
+
+            window.location.href = "/pages/address.html"
+
+        });
+
+        // function submit() {
+        //     window.location.href = "/pages/address.html"
+        // }
+
+    </script>
+
+
+    <!-- <a href="../pages/address.html"></a> -->
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/address.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>REQUEST FORM </title>
+
+
+    <style>
+        .button {
+            display: flex;
+            margin-right: 30px;
+        }
+
+        .btn-1 {
+            margin-left: 30px;
+        }
+
+        .btn-2 {
+            margin-left: 30px;
+        }
+
+        .btn-3 {
+            margin-left: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="details" id="form">
+        <h1>Fill the Details</h1>
+        <hr>
+        <form>
+
+
+            <div class="photo">
+                <img src="../assest/image/download profile photo.png">
+            </div>
+
+            <div class="address">
+
+
+                <label for="subject">Home Address:</label><br><br>
+                <textarea id="subject" name="subject" placeholder="fill address" rows="8" cols="40"></textarea><br><br>
+
+
+                <fieldset>
+                    <label>U Need dust Bin</label><br>
+                    <input type="radio" id="mr" value="yes" name="saluation">Yes
+                    <input type="radio" id="mrs" value="no" name="saluation">No
+
+                </fieldset><br>
+
+
+
+            </div>
+
+            <div id="button">
+                <!-- <button class="btn-1">edit</button> -->
+                <button onclick="submit()" class="btn-2">
+                    submit</button>
+
+                <!-- <button class="btn-3">detail</button> -->
+            </div>
+
+
+
+            <script>
+                let form = document.getElementById("form");
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+
+                    const USER_INFO_KEY = "user_info-1";
+                    let user = []
+                    if (USER_INFO_KEY in localStorage) {
+                        user = JSON.parse(localStorage.getItem(USER_INFO_KEY));
+                    }
+
+                    let userObject = {
+                        address: document.getElementById("subject").value,
+                        YES: document.getElementById("mr").value,
+                        NO: document.getElementById("mrs").value,
+                    };
+
+                    user.push(userObject);
+                    localStorage.setItem(USER_INFO_KEY, JSON.stringify(user));
+                    console.log("userObject");
+
+
+
+                    window.location.href = "/pages/pick.html"
+
+
+                })
+
+
+
+
+            </script>
+            <!-- 
+            <a href="../pages/pick.html"></a> -->
+
+            <!-- <a href="./pick.html"></a> -->
+</body>
+
+
+
+
+
+</html>

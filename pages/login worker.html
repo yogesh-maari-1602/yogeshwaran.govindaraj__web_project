@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css.page 2 website/login worker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <form id="form">
+
+            <div class="main">
+
+                <h1>Log In </h1>
+
+                <p class="sim"> Username</p>
+                </label><input name="username" type="text" id="username" required>
+
+                <p class="sim1"> Email</p>
+                <input name="email" type="email" id="email" required>
+
+                <p class="sim2"> Password</p>
+                <input name="password" type="password" id="password" required>
+
+                <button class="btn" type="submit">Log-in</button>
+
+                <div class="link">
+                    <p>Don't have an Account? <a href="">Sign-up→</a></p>
+                </div>
+
+
+                <!-- icon -->
+                <div class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+
+
+
+
+
+
+        // converting string into array of objects
+
+        // const checklogin = document.getElementById("loginpage");
+
+        // checklogin.onsubmit = e => {
+
+        //     e.preventDefault();
+
+        //     const username = document.getElementById("username").value;
+        //     const email = document.getElementById("email").value;
+        //     const password = document.getElementById("password").value;
+
+        //     const localdata = JSON.parse(localStorage.getItem("user_records"))
+
+        //     if (!localdata) {
+        //         alert("login failure");
+        //         return;
+        //     }
+
+        //     let success = false;
+        //     for (let i = 0; i < localdata.length; i++) {
+        //         if ((localdata[i]["Firstname"] === username) && (localdata[i]["email"] === email) && (localdata[i]["password"] === password)) {
+        //             success = true;
+        //             break;
+        //         }
+        //     }
+
+        //     if (success) {
+        //         alert("login successful");
+        //         window.location.href = "../html/profilepage.html";
+        //     } else {
+        //         alert("login failure");
+        //     }
+
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
