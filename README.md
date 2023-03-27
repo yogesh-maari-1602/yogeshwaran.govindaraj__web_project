@@ -5,4 +5,17 @@ register page [completed]
 login page [completed]
 profile page [completed]
 profile edit [completed]
-delete user [pending](1day)
+
+calendar 
+created [completed]
+read[completed]
+update[completed]
+
+
+worker
+created [completed]
+read[completed]
+update[completed]
+
+
+
