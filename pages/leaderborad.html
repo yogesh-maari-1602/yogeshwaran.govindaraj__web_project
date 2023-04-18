@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/leaderboard.css">
+    <title>Admin</title>
+
+</head>
+
+<body>
+
+    <h1>Booking list</h1>
+    <table>
+        <!-- <tr>
+            <th>Number</th>
+            <th>Name</th>
+            <th>Booking Day</th>
+        </tr> -->
+
+        <!-- <tr> -->
+
+        <!-- <td id="name">Yogesh</td> -->
+        <!-- <td class="day">
+                <p>S</p>
+                <p>M</p>
+                <p>T</p>
+                <p>W</p>
+                <p>T</p>
+                <p>F</p>
+                <p>S</p>
+            </td>
+        </tr> -->
+
+    </table>
+
+    <script>
+        let card = JSON.parse(localStorage.getItem("pick"));
+
+        let table_card = document.createElement("table");
+
+        let tr_card = document.createElement("tr");
+        table_card.append(tr_card);
+
+        let th_card1 = document.createElement("th");
+        th_card1.innerText = "Name";
+        tr_card.append(th_card1);
+
+        let th_card2 = document.createElement("th");
+        th_card2.innerText = "Booking day";
+        tr_card.append(th_card2);
+
+
+        let days = ["M", "Tu", "W", "Th", "F", "Sat", "Sun"]
+        let pickDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        for (let i = 0; i < card.length; i++) {
+
+            // let findid = card.find(function (event) {
+            //     let id = event["day"]
+            //     if (card[i]["day"] === id) {
+            //         // return true
+            //         console.log(id);
+            //         // const element = document.getElementById("day");
+            //         // element.style.color = "red";
+
+
+
+
+            //         let tr_card2 = document.createElement("tr");
+            //         table_card.append(tr_card2);
+
+
+
+
+
+            //         // td_card = document.createElement("td");
+            //         // td_card.innerText = "Yogesh";
+            //         // tr_card2.append(td_card);
+
+            //         td_card1 = document.createElement("td");
+            //         td_card1.setAttribute("class", "day");
+            //         td_card1.innerText = card[i]["name"]
+            //         tr_card2.append(td_card1);
+
+
+            //         td_card2 = document.createElement("td");
+            //         td_card2.setAttribute("class", "days");
+            //         // td_card2.innerText = card[i]["Booking Day"]
+            //         tr_card2.append(td_card2);
+
+            //         // let p1 = document.createElement("p");
+            //         // p1.innerText = "M";
+            //         // p1.setAttribute("value", "Monday")
+            //         // // p1.setAttribute("id", "day")
+            //         // td_card2.append(p1);
+
+            //         // let p2 = document.createElement("p");
+            //         // p2.innerText = "Tu";
+            //         // p2.setAttribute("value", "Tuesday")
+            //         // // p1.setAttribute("id", "day")
+            //         // td_card2.append(p2);
+
+            //         // let p3 = document.createElement("p");
+            //         // p3.innerText = "W";
+            //         // p3.setAttribute("value", "Wednesday")
+            //         // // p1.setAttribute("id", "day")
+            //         // td_card2.append(p3);
+
+            //         // let p4 = document.createElement("p");
+            //         // p4.innerText = "th";
+            //         // p4.setAttribute("value", "Thursday")
+            //         // // p1.setAttribute("id", "day")
+            //         // td_card2.append(p4);
+
+            //         // let p5 = document.createElement("p");
+            //         // p5.innerText = "F";
+            //         // p5.setAttribute("value", "Friday")
+            //         // // p1.setAttribute("id", "day")
+            //         // td_card2.append(p5);
+
+
+
+            //         // let p6 = document.createElement("p");
+            //         // p6.innerText = "Sa";
+            //         // p6.setAttribute("value", "Saturday")
+            //         // // p1.setAttribute("id", "day")
+            //         // td_card2.append(p6);
+
+
+            //         // let p7 = document.createElement("p");
+            //         // p7.innerText = "S";
+            //         // // p7.setAttribute("value", "Sunday")
+            //         // // p1.setAttribute("id", "day")
+            //         // td_card2.append(p7);
+
+            //         for (let j = 0; j < days.length; j++) {
+            //             let p = document.createElement("p");
+            //             p.innerText = days[j];
+            //             // p7.setAttribute("value", "Sunday")
+            //             // p1.setAttribute("id", "day")
+            //             if (pickDays === card["day"]) {
+            //                 // p.style.backgroundColor = "red"
+            //                 console.log(days[j])
+            //             }
+            //             td_card2.append(p);
+            //         }
+            //         document.querySelector("body").append(table_card);
+
+
+
+
+            //         document.querySelector("body").append(table_card);
+
+            //     }
+            // })
+            let tr_card2 = document.createElement("tr");
+            table_card.append(tr_card2);
+
+
+
+
+
+            // td_card = document.createElement("td");
+            // td_card.innerText = "Yogesh";
+            // tr_card2.append(td_card);
+
+            td_card1 = document.createElement("td");
+            td_card1.setAttribute("class", "day");
+            td_card1.innerText = card[i]["name"]
+            tr_card2.append(td_card1);
+
+
+            td_card2 = document.createElement("td");
+            td_card2.setAttribute("class", "days");
+            // td_card2.innerText = card[i]["Booking Day"]
+            tr_card2.append(td_card2);
+            let index = pickDays.indexOf(card[i].day)
+            for (let j = 0; j < days.length; j++) {
+                let p = document.createElement("p");
+                p.innerText = days[j];
+                // p7.setAttribute("value", "Sunday")
+                // p1.setAttribute("id", "day")
+                if (j === index) {
+                    p.style.backgroundColor = "lightgreen"
+                }
+
+                td_card2.append(p);
+            }
+            document.querySelector("body").append(table_card);
+        }
+
+
+        // let isSelectedDate = i === selectedDate.getDate() && currMonth === selectedDate.getMonth()
+        //     && currYear === selectedDate.getFullYear() ? "active" : "";
+            // liTag += `<li class="${isSelectedDate}">${i}</li>`
+
+
+    </script>
+
+    <!-- <div id="app"></div> -->
+
+</html>
+
+</body>
+
+</html>

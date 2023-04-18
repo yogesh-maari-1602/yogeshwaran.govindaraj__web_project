@@ -121,13 +121,22 @@
                 //adding active current day 
                 let isToday = i === date.getDate() && currMonth === new Date().getMonth()
                     && currYear === new Date().getFullYear() ? "active" : "";
-                liTag += `<li class="${isToday}">${i}</li>`
+                // liTag += `<li class="${isToday}">${i}</li>`
+
+                const urlParams = new URLSearchParams(window.location.search);
+                const selectedDate = new Date(urlParams.get("date"));
+                console.log("The selected date is " + selectedDate.toString());
+
+                // passing the code 
+
+                let isSelectedDate = i === selectedDate.getDate() && currMonth === selectedDate.getMonth()
+                    && currYear === selectedDate.getFullYear() ? "active" : "";
+                liTag += `<li class="${isSelectedDate}">${i}</li>`
             }
 
             for (let i = lastDayofMonth; i < 6; i++) {
                 liTag += `<li class="inactive">${i - lastDayofMonth + 1}</li>`
             }
-
 
             currentdate.innerText = `${month[currMonth]} ${currYear}`;
             daysTag.innerHTML = liTag;

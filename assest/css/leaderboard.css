@@ -1,0 +1,138 @@
+ 
+        table {
+            border-collapse: collapse;
+            /* width: 50%; */
+            background-color: #f1f1f1;
+            margin-left: 390px;
+            margin-top: 10px;
+       
+
+        }
+
+
+        
+
+
+        th,
+        td {
+            /* text-align: left; */
+            padding: 17px;
+            width: 330px;
+           
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 20px;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+          
+            /* display: flex; */
+
+        }
+
+        .days p{
+            display: flex;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+
+        h1{
+            text-align: center;
+            font-style: italic;
+        }
+
+        .day {
+            display: flex;
+            justify-content: space-around;
+            cursor: pointer;
+        }
+
+
+        tr{
+            display: flex;
+            align-items: center;
+           
+        }
+
+
+
+
+        td{
+             display: flex;
+             margin-top: -3px;
+             gap: 2em;
+            
+        }
+        
+        p{
+            justify-content: space-evenly;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         
+
+        
+        
+
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

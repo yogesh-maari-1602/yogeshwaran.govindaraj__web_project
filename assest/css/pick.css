@@ -58,6 +58,8 @@ label{
     font-size: 25px;
     font-weight: bolder;
     color: white;
+    margin-top: 40px;
+    gap: 2rem;
     /* margin-top: 20px; */
     /* margin-top: 30px; */
 }
@@ -91,4 +93,10 @@ textarea{
     font-size: 20px;
 }
 
+#name{
+    width: 300px;
+}
 
+.day{
+    display: flex;
+}
