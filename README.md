@@ -49,7 +49,7 @@ Fill the detail have a one form
  Next come anthor one form pick the garabage
  enter your name ,address,number ,enter date and time 
  we click submite 
- its go to the calendar page 
+ its go to the calendarpage 
  
 
 
