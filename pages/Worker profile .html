@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/worker profile.css">
+    <title>Worker list</title>
+</head>
+
+<body>
+
+    <h1 class="our-team">Workers id</h1>
+    <div class="full_section">
+        <div class="photo-section"></div>
+        <div class="new_section"></div>
+    </div>
+    <!-- 
+    <div class="type">
+        <button>Edit</button>
+        <button>Save</button>
+    </div> -->
+
+
+    <!-- java script -->
+    <script>
+        // Json//
+        const worker_id = [
+
+
+            {
+                image: "https://ca.slack-edge.com/T032648LE-U041XM0M9N0-560074dc5510-512",
+                alt: "image",
+                name: "sridevan@gmail.com",
+                phone_number: "9150238692",
+            },
+
+
+
+
+        ]
+
+        for (let i = 0; i < worker_id.length; i++) {
+            let content = document.createElement("div");
+            content.setAttribute("class", "background");
+
+
+            let image_div = document.createElement("div");
+            image_div.setAttribute("class", "img");
+            content.append(image_div);
+
+            let image = document.createElement("img");
+            image.setAttribute("width", "300px");
+            image.setAttribute("src", worker_id[i]["image"]);
+            image.setAttribute("alt", "image");
+            image_div.append(image);
+
+            let details = document.createElement("div");
+            details.setAttribute("class", "down");
+
+
+            let name = document.createElement("h3");
+            name.innerText = worker_id[i]["name"];
+            details.append(name);
+
+            let number = document.createElement("p");
+            number.innerText = worker_id[i]["phone_number"];
+            details.append(number);
+            content.append(details);
+
+
+
+            document.querySelector(".photo-section").prepend(content);
+            console.log(details, content)
+        }
+
+
+
+
+        let currentProduct = JSON.parse(localStorage.getItem("pick"));
+        // console.log(Data);
+
+        console.log(currentProduct);
+        for (let i = 0; i < currentProduct.length; i++) {
+            let div_card = document.createElement("div");
+            div_card.setAttribute("id", "form");
+            div_card.setAttribute("class", "card");
+
+            let card = document.createElement("div");
+            card.setAttribute("class", "img");
+            div_card.append(card);
+
+            let image = document.createElement("img");
+            image.setAttribute("src", currentProduct[i]["Url"]);
+            // image.setAttribute("alt", Card[i]["alt"]);
+            image.setAttribute("width", "500px");
+            card.append(image);
+
+            let detail = document.createElement("div");
+            detail.setAttribute("class", "detail");
+            div_card.append(detail);
+
+            let name = document.createElement("p");
+            name.innerText = "Name :" + currentProduct[i]["name"];
+            detail.append(name);
+
+            let price = document.createElement("p");
+            price.innerText = "Phonenumber :" + currentProduct[i]["phonenumber"];
+            detail.append(price);
+
+            let type = document.createElement("p");
+            type.innerText = "address :" + currentProduct[i]["address"];
+            detail.append(type);
+
+            let place = document.createElement("p");
+            place.innerText = "date :" + currentProduct[i]["date"];
+            detail.append(place);
+
+            let description = document.createElement("p");
+            description.innerText = "day : " + currentProduct[i]["day"];
+            detail.append(description);
+            document.querySelector(".new_section").append(div_card);
+
+        }
+
+    </script>
+</body>
+
+</html>

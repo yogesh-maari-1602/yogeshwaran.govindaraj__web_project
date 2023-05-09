@@ -135,18 +135,55 @@ span:hover{
 
 .History{
 
-       width: 220px;
+    width: 220px;
     padding: 20px;
     margin-top: 30px;
     position: absolute; 
     margin-left: 20px;
     border: none;
     border-radius: 20px;
-    background-color: rgb(231, 133, 133);
-    color: white;
-    font-size: 25px;
+    /* background-color: rgb(231, 133, 133); */
+    background-color: white;
+    color: black;
+    font-size: 15px;
     font-weight: bolder;
 }
 
+
+
+.booking{
+/* margin-left: 1400px;
+    margin-top: 300px; */
+    position: absolute;
+    margin-left: 20px;
+     width: 220px;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color:white;
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 100px;
+}
+
+.pick {
+    position: absolute;
+    margin-left: 20px;
+     width: 220px;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+    background-color:white;
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+    margin-top: 180px; 
+}
+
+.image{
+    margin-left: 1300px;
+    margin-top: 20px;
+}
 
 

@@ -9,108 +9,80 @@ body{
     background-size: cover;
 }
 .details{
-    margin-top: 45px;
+    margin-top: 20px;
     margin-left: 500px;
     margin-right: 600px;
     background-color: #f5f5f5;
     padding: 35px;
     width: 500px;
-    height: 700px;
+    height: 780px;
     /* border-radius: 25px; */
     font-size: 20px;
 }
 .details h1{
     text-align: center;
-}
-.photo{
-    margin-left: 150px;
-    border-radius: 200px;
-    margin-top: 30px;
-    
-}
-.address{
-margin-left: 50px;
-margin-top: 30px;
-
-}
-.address label{
-   font-size: 30px;
-   
-}
-.address input{
-    padding: 15px;
-     font-size: 20px;
-    border: none;
-    box-sizing: 4px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-}
-.collection{
-     margin-top: 10px;
-     margin-left: 20px;
+    font-size: 30px;
 }
 
-.collection h3{
-    font-weight: bolder;
+
+.input-div{
     font-size: 25px;
-    margin-left: -25px;
-    color: #0b1320;
+    margin-top: 20px;
 }
-.dust-bin h3{
-    font-weight: bolder;
-    font-size: 20px;
-    margin-left: -25px;
-    color: #0b1320;
-}
-   
-.collection input{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    
-}
-.dust-bin{
+
+.input-div input{
+    padding: 10px;
+    width: 300px;
     margin-top: 10px;
     margin-left: 20px;
-}
-.dust-bin input{
-    margin-bottom: 10px;
-
-}
-button{
-    margin-top: 45px;
-    margin-left: 70px;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 13px;
-    width: 380px;
+    font-size: 30px;
     border: none;
-    border-radius: 25px;
-    background-color: rgb(17, 119, 183);
-    color: white;
 }
 
-
-button:active{
-    background-color: lightgreen;
+.name{
+    margin-top: 20px;
+    font-size: 25px;
 }
 
-/* .btn-1{
-    background-color: white;
-    color: black;
-    margin-left: 70px;
+.name input{
+    padding: 10px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 30px;
+    border: none;
+}
 
-} */
+.address{
+    margin-top: 20px;
+    font-size: 25px;
+}
 
-/* .btn-3{
-    background-color: red;
-} */
+.address textarea{
+     padding: 5px;
+    width: 400px;
 
+    font-size: 20px;
+    border: none;
+}
 
 fieldset{
     border: none;
 }
 
-textarea{
-    font-size: 20PX;
+
+
+
+button{
+    padding: 15px;
+    width: 200px;
+    /* text-align: center; */
+    margin-left: 110px;
+    border: none;
+   background-color: skyblue;
+   font-size: 20px;
+   font-weight: 90px;
+   border-radius: 2px;
+   
 }
+

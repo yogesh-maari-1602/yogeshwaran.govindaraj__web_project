@@ -12,24 +12,7 @@
     <title>REQUEST FORM </title>
 
 
-    <style>
-        .button {
-            display: flex;
-            margin-right: 30px;
-        }
 
-        .btn-1 {
-            margin-left: 30px;
-        }
-
-        .btn-2 {
-            margin-left: 30px;
-        }
-
-        .btn-3 {
-            margin-left: 20px;
-        }
-    </style>
 
 </head>
 
@@ -37,82 +20,149 @@
     <div class="details" id="form">
         <h1>Fill the Details</h1>
         <hr>
-        <form>
-
-
-            <div class="photo">
-                <img src="../assest/image/download profile photo.png">
-            </div>
-
-            <div class="address">
-
-
-                <label for="subject">Home Address:</label><br><br>
-                <textarea id="subject" name="subject" placeholder="fill address" rows="8" cols="40"></textarea><br><br>
-
-
-                <fieldset>
-                    <label>U Need dust Bin</label><br>
-                    <input type="radio" id="mr" value="yes" name="saluation">Yes
-                    <input type="radio" id="mrs" value="no" name="saluation">No
-
-                </fieldset><br>
-
-
-
-            </div>
-
-            <div id="button">
-                <!-- <button class="btn-1">edit</button> -->
-                <button onclick="submit()" class="btn-2">
-                    submit</button>
-
-                <!-- <button class="btn-3">detail</button> -->
-            </div>
-
-
-
-            <script>
-                let form = document.getElementById("form");
-                form.addEventListener('submit', function (event) {
-                    event.preventDefault();
-
-
-                    const USER_INFO_KEY = "user_info-1";
-                    let user = []
-                    if (USER_INFO_KEY in localStorage) {
-                        user = JSON.parse(localStorage.getItem(USER_INFO_KEY));
-                    }
-
-                    let userObject = {
-                        address: document.getElementById("subject").value,
-                        YES: document.getElementById("mr").value,
-                        NO: document.getElementById("mrs").value,
-                    };
-
-                    user.push(userObject);
-                    localStorage.setItem(USER_INFO_KEY, JSON.stringify(user));
-                    console.log("userObject");
-
-
-
-                    window.location.href = "/pages/pick.html"
-
-
-                })
 
 
 
 
-            </script>
-            <!-- 
+        <div class="input-div">
+            <label>Upload photo</label><br>
+            <input id="pic" type="url" placeholder="Add photo url" required />
+        </div>
+
+        <div class="name">
+
+
+            <label for="name">Name</label><br><br>
+            <input type="name" id="username" name="name" placeholder="Fill the name" required><br><br>
+
+            <label for="phone">Phone number</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="Enter the Number" maxlength="10" required><br><br>
+
+
+
+        </div>
+
+
+        <div class="address">
+
+
+            <label for="subject">Home Address</label><br><br>
+            <textarea id="subject" name="subject" placeholder="fill address" rows="8" cols="40"
+                required></textarea><br><br>
+
+        </div>
+
+        <fieldset>
+            <label>U Need dust Bin</label><br>
+            <input type="radio" id="mr" value="yes" name="saluation" required>Yes
+            <input type="radio" id="mrs" value="no" name="saluation" required>No
+
+        </fieldset><br>
+
+
+
+
+
+        <div id="button">
+            <!-- <button class="btn-1">edit</button> -->
+            <button type="submit" onclick="submit()" class="btn-2">
+                Click me</button>
+
+            <!-- <button class="btn-3">detail</button> -->
+        </div>
+    </div>
+
+    <script>
+
+        let form = document.getElementById("form");
+        document.createElement("user_address")
+        function submit() {
+            event.preventDefault()
+
+            let array = []
+            if (localStorage.getItem("user_address") != null) {
+                array = JSON.parse(localStorage.getItem("user_address"));
+            }
+
+
+            let match = false;
+
+            const pic = document.getElementById("pic").value
+            const username = document.getElementById("username").value
+            const phone = document.getElementById("phone").value
+            const subject = document.getElementById("subject").value
+
+            const mr = document.getElementById("mr").value
+            const mrs = document.getElementById("mrs").value
+
+
+            let userobject = {
+                pic,
+                username,
+                phone,
+                subject,
+                mr,
+                mrs,
+            }
+
+
+            array.push(userobject)
+            const str = JSON.stringify(array);
+            localStorage.setItem("user_address", str);
+
+            console.log(str)
+
+            window.location.href = "/pages/pick.html"
+
+        }
+        // form.addEventListener("submit", function (event) {
+        //     event.preventDefault()
+
+        //     let array = []
+        //     if (localStorage.getItem("user_address") != null) {
+        //         array = JSON.parse(localStorage.getItem("user_address"));
+        //     }
+
+
+        //     let match = false;
+
+        //     const pic = document.getElementById("pic").value
+        //     const username = document.getElementById("username").value
+        //     const phone = document.getElementById("phone").value
+        //     const subject = document.getElementById("subject").value
+
+        //     const mr = document.getElementById("mr").value
+        //     const mrs = document.getElementById("mrs").value
+
+
+        //     let userobject = {
+        //         pic,
+        //         username,
+        //         phone,
+        //         subject,
+        //         mr,
+        //         mrs,
+        //     }
+
+
+        //     array.push(userobject)
+        //     const str = JSON.stringify(array);
+        //     localStorage.setItem("user_address", str);
+
+        //     console.log(str)
+
+        //     window.location.href = "/pages/pick.html"
+
+
+
+
+        // });
+
+    </script>
+
+    <!-- 
             <a href="../pages/pick.html"></a> -->
 
-            <!-- <a href="./pick.html"></a> -->
 </body>
-
-
-
-
 
 </html>

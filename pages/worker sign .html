@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assest/css/sign page user.css">
+    <link rel="stylesheet" href="../assest/css/worker sign.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    <title>SignUp</title>
+    <title> worker SignUp</title>
 </head>
 
 <body>
@@ -28,8 +28,7 @@
                 <p class="sim1">Email</p>
                 <input type="email" id="email" required>
 
-
-                <p for="phone" class="sim2">Phone number</p>
+                <p for="phone" class="sim">Phone number</p>
                 <input type="tel" id="phone" maxlength="10" required>
 
 
@@ -70,9 +69,8 @@
         form.addEventListener('submit', function (event) {
             event.preventDefault();
 
-            let user = []
-
-            let defaultData = JSON.parse(localStorage.getItem("user_sign"));
+            let worker = []
+            let defaultData = JSON.parse(localStorage.getItem("worker_sign"));
             console.log(defaultData);
 
             const username = document.getElementById('username').value
@@ -80,20 +78,18 @@
             const email = document.getElementById('email').value
             const password = document.getElementById('password').value
 
-
+            // if (worker_sign in localStorage) {
+            //     users = JSON.parse(localStorage.getItem(worker_sign));
+            // }
             let userObject = {
-
                 username,
                 phone,
                 email,
                 password,
-
+                // confirmPassword: document.getElementById('confirmpassword').value,
             };
-
-            // console.log(user);
-
-            user.push(userObject);
-            localStorage.setItem(defaultData, JSON.stringify(user));
+            worker.push(userObject);
+            localStorage.setItem(defaultData, JSON.stringify(worker));
             console.log('appended to the local storage.');
 
             window.location.href = "/pages/login user page.html";

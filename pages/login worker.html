@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css.page 2 website/login worker.css">
+    <link rel="stylesheet" href="../assest/css/login worker.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -13,17 +13,18 @@
 </head>
 
 <body>
+
     <div class="container">
 
 
-        <form id="form">
+        <form id="login">
 
             <div class="main">
 
                 <h1>Log In </h1>
 
                 <p class="sim"> Username</p>
-                </label><input name="username" type="text" id="username" required>
+                </label><input name="username" type="text" id="username" autocomplete="off" required>
 
                 <p class="sim1"> Email</p>
                 <input name="email" type="email" id="email" required>
@@ -31,10 +32,13 @@
                 <p class="sim2"> Password</p>
                 <input name="password" type="password" id="password" required>
 
-                <button class="btn" type="submit">Log-in</button>
+                <a href="../pages/worker form.html"> <button onclick="submit()" class="btn"
+                        type="submit">Log-in</button></a>
 
                 <div class="link">
-                    <p>Don't have an Account? <a href="">Sign-up→</a></p>
+
+                    <p>Don't have an Account? <a href="../pages/sign user .html">Sign-up→</p>
+                    </a>
                 </div>
 
 
@@ -50,65 +54,68 @@
 
 
     <script>
+        let logIn = document.getElementById("login");
+        logIn.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            let user_arr = [];
+
+            let defaultData = JSON.parse(localStorage.getItem("user_info"));
+            console.log(defaultData);
+
+
+            let name = document.getElementById("username").value
+            let Email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            console.log(username, email, password);
+
+            //   [  { }, {}, {}, {}, {0}, {} ]
+
+            let isMatch = false;
+
+            for (let i = 0; i < defaultData.length; i++) {
+                if (
+                    Email == defaultData[i].email &&
+                    password == defaultData[i].password
+                ) {
+                    isMatch = true;
+                    user_arr.push(defaultData[i]);
+                    window.localStorage.setItem("login_user", JSON.stringify(user_arr));
+                    break;
+
+                } else {
+                    isMatch = false;
+                }
+            }
+
+
+            if (isMatch === true) {
+                alert("success")
 
 
 
+                window.location.href = ""
+                console.log("working")
+                // window.location.href = "";
+            } else {
+                alert("failed")
+                // window.location.href ="";
+            }
 
 
 
-        // converting string into array of objects
+        });
 
-        // const checklogin = document.getElementById("loginpage");
-
-        // checklogin.onsubmit = e => {
-
-        //     e.preventDefault();
-
-        //     const username = document.getElementById("username").value;
-        //     const email = document.getElementById("email").value;
-        //     const password = document.getElementById("password").value;
-
-        //     const localdata = JSON.parse(localStorage.getItem("user_records"))
-
-        //     if (!localdata) {
-        //         alert("login failure");
-        //         return;
-        //     }
-
-        //     let success = false;
-        //     for (let i = 0; i < localdata.length; i++) {
-        //         if ((localdata[i]["Firstname"] === username) && (localdata[i]["email"] === email) && (localdata[i]["password"] === password)) {
-        //             success = true;
-        //             break;
-        //         }
-        //     }
-
-        //     if (success) {
-        //         alert("login successful");
-        //         window.location.href = "../html/profilepage.html";
-        //     } else {
-        //         alert("login failure");
-        //     }
-
-        // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        function submit() {
+            window.location.href = "/pages/worker form.html"
+        }
 
     </script>
 
+
+    <!-- <a href="../pages/address.html"></a> -->
+    <a href="../pages/worker form.html">
 
 </body>
 
