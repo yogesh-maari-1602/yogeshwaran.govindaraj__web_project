@@ -15,67 +15,54 @@
     <div class="full_section">
         <div class="photo-section"></div>
         <div class="new_section"></div>
+
     </div>
-    <!-- 
-    <div class="type">
-        <button>Edit</button>
-        <button>Save</button>
-    </div> -->
+
+
+
+    <!-- <button id="btn">Edit</button>
+    <button id="btn1">Save</button> -->
+
 
 
     <!-- java script -->
     <script>
-        // Json//
-        // const worker_id = [
-
-
-        //     {
-        //         image: "https://ca.slack-edge.com/T032648LE-U041XM0M9N0-560074dc5510-512",
-        //         alt: "image",
-        //         name: "sridevan@gmail.com",
-        //         phone_number: "9150238692",
-        //     },
-
-
-
-
-        // ]
 
         let worker_id = JSON.parse(localStorage.getItem("user_address"))
 
-        for (let i = 0; i < worker_id.length; i++) {
-            let content = document.createElement("div");
-            content.setAttribute("class", "background");
+        // for (let i = 0; i < worker_id.length; i++) {
+        let content = document.createElement("div");
+        content.setAttribute("class", "background");
 
 
-            let image_div = document.createElement("div");
-            image_div.setAttribute("class", "img");
-            content.append(image_div);
+        let image_div = document.createElement("div");
+        image_div.setAttribute("class", "img");
+        content.append(image_div);
 
-            let image = document.createElement("img");
-            image.setAttribute("width", "300px");
-            image.setAttribute("src", worker_id[i]["pic"]);
-            image.setAttribute("alt", "image");
-            image_div.append(image);
+        let image = document.createElement("img");
+        image.setAttribute("width", "300px");
+        image.setAttribute("src", worker_id[0]["pic"]);
+        image.setAttribute("alt", "image");
+        image_div.append(image);
 
-            let details = document.createElement("div");
-            details.setAttribute("class", "down");
-
-
-            let name = document.createElement("h3");
-            name.innerText = worker_id[i]["username"];
-            details.append(name);
-
-            let number = document.createElement("p");
-            number.innerText = worker_id[i]["phone"];
-            details.append(number);
-            content.append(details);
+        let details = document.createElement("div");
+        details.setAttribute("class", "down");
 
 
+        let name = document.createElement("h3");
+        name.innerText = worker_id[0]["username"];
+        details.append(name);
 
-            document.querySelector(".photo-section").prepend(content);
-            console.log(details, content)
-        }
+        let number = document.createElement("p");
+        number.innerText = worker_id[0]["phone"];
+        details.append(number);
+        content.append(details);
+
+
+
+        document.querySelector(".photo-section").prepend(content);
+        console.log(details, content)
+        // }
 
 
 
@@ -84,49 +71,86 @@
         // console.log(Data);
 
         console.log(currentProduct);
-        for (let i = 0; i < currentProduct.length; i++) {
-            let div_card = document.createElement("div");
-            div_card.setAttribute("id", "form");
-            div_card.setAttribute("class", "card");
+        // for (let i = 0; i < currentProduct.length; i++) {
+        let div_card = document.createElement("div");
+        div_card.setAttribute("id", "form");
+        div_card.setAttribute("class", "card");
 
-            let card = document.createElement("div");
-            card.setAttribute("class", "img");
-            div_card.append(card);
+        let card = document.createElement("div");
+        card.setAttribute("class", "img");
+        div_card.append(card);
 
-            let image = document.createElement("img");
-            image.setAttribute("src", currentProduct[i]["Url"]);
-            // image.setAttribute("alt", Card[i]["alt"]);
-            image.setAttribute("width", "500px");
-            card.append(image);
+        let img = document.createElement("img");
+        img.setAttribute("src", currentProduct[0]["Url"]);
+        // image.setAttribute("alt", Card[i]["alt"]);
+        image.setAttribute("width", "200px");
+        card.append(img);
 
-            let detail = document.createElement("div");
-            detail.setAttribute("class", "detail");
-            div_card.append(detail);
+        let detail = document.createElement("div");
+        detail.setAttribute("class", "detail");
+        div_card.append(detail);
 
-            let name = document.createElement("p");
-            name.innerText = "Name :" + currentProduct[i]["name"];
-            detail.append(name);
+        let fname = document.createElement("p");
+        fname.innerText = "Name :" + currentProduct[0]["name"];
+        detail.append(fname);
 
-            let price = document.createElement("p");
-            price.innerText = "Phonenumber :" + currentProduct[i]["phonenumber"];
-            detail.append(price);
+        let price = document.createElement("p");
+        price.innerText = "Phonenumber :" + currentProduct[0]["phonenumber"];
+        detail.append(price);
 
-            let type = document.createElement("p");
-            type.innerText = "address :" + currentProduct[i]["address"];
-            detail.append(type);
+        let type = document.createElement("p");
+        type.innerText = "address :" + currentProduct[0]["address"];
+        detail.append(type);
 
-            let place = document.createElement("p");
-            place.innerText = "date :" + currentProduct[i]["date"];
-            detail.append(place);
+        let place = document.createElement("p");
+        place.innerText = "date :" + currentProduct[0]["date"];
+        detail.append(place);
 
-            let description = document.createElement("p");
-            description.innerText = "day : " + currentProduct[i]["day"];
-            detail.append(description);
-            document.querySelector(".new_section").append(div_card);
+        let description = document.createElement("p");
+        description.innerText = "day : " + currentProduct[0]["day"];
+        detail.append(description);
+        document.querySelector(".new_section").append(div_card);
 
-        }
+        // }
+
+
+        // edit data
+
+        // const combineData = Object.assign(newData, select_user);
+        // console.log(combineData);
+        // alert("successfully changed");
+
+        // let findIndex = user_info.indexOf(select_user);
+        // user_info[findIndex] = combineData;
+        // localStorage.setItem("null", JSON.stringify(user_info));
+
+        // function submit() {
+        //     alert("success fully happen")
+
+        // }
+
+
+
+        // function submit1() {
+        //     alert("worker not picking after 5 mins you try again failed")
+        // }
+
+
+
+
 
     </script>
+
+
+
+    <!-- <div class="image">
+        <a href="../pages/calenderdemo.html"><img onclick="submit()" src="../assest/image/tick_green.jpg"
+                width="60px"></a>
+
+        <a href="../pages/address worker.html"><img onclick="submit1()" src="../assest/image/wrong (1).png"
+                width="60px"></a>
+    </div> -->
+
 </body>
 
 </html>
