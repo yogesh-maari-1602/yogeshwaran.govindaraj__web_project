@@ -43,21 +43,7 @@
         </div>
 
 
-        <div class="address">
 
-
-            <label for="subject">Home Address</label><br><br>
-            <textarea id="subject" name="subject" placeholder="fill address" rows="8" cols="40"
-                required></textarea><br><br>
-
-        </div>
-
-        <fieldset>
-            <label>U Need dust Bin</label><br>
-            <input type="radio" id="mr" value="yes" name="saluation" required>Yes
-            <input type="radio" id="mrs" value="no" name="saluation" required>No
-
-        </fieldset><br>
 
 
 
@@ -65,8 +51,8 @@
 
         <div id="button">
             <!-- <button class="btn-1">edit</button> -->
-            <button type="submit" onclick="submit()" class="btn-2">
-                Click me</button>
+            <a href="../pages/Worker profile .html"><button type="submit" onclick="submit()" class="btn-2">
+                    Click me</button></a>
 
             <!-- <button class="btn-3">detail</button> -->
         </div>
@@ -90,19 +76,19 @@
             const pic = document.getElementById("pic").value
             const username = document.getElementById("username").value
             const phone = document.getElementById("phone").value
-            const subject = document.getElementById("subject").value
+            // const subject = document.getElementById("subject").value
 
-            const mr = document.getElementById("mr").value
-            const mrs = document.getElementById("mrs").value
+            // const mr = document.getElementById("mr").value
+            // const mrs = document.getElementById("mrs").value
 
 
             let userobject = {
                 pic,
                 username,
                 phone,
-                subject,
-                mr,
-                mrs,
+                // subject,
+                // mr,
+                // mrs,
             }
 
 
@@ -112,51 +98,10 @@
 
             console.log(str)
 
-            window.location.href = "/pages/pick.html"
+            window.location.href = "/pages/Worker profile .html"
 
         }
-        // form.addEventListener("submit", function (event) {
-        //     event.preventDefault()
 
-        //     let array = []
-        //     if (localStorage.getItem("user_address") != null) {
-        //         array = JSON.parse(localStorage.getItem("user_address"));
-        //     }
-
-
-        //     let match = false;
-
-        //     const pic = document.getElementById("pic").value
-        //     const username = document.getElementById("username").value
-        //     const phone = document.getElementById("phone").value
-        //     const subject = document.getElementById("subject").value
-
-        //     const mr = document.getElementById("mr").value
-        //     const mrs = document.getElementById("mrs").value
-
-
-        //     let userobject = {
-        //         pic,
-        //         username,
-        //         phone,
-        //         subject,
-        //         mr,
-        //         mrs,
-        //     }
-
-
-        //     array.push(userobject)
-        //     const str = JSON.stringify(array);
-        //     localStorage.setItem("user_address", str);
-
-        //     console.log(str)
-
-        //     window.location.href = "/pages/pick.html"
-
-
-
-
-        // });
 
     </script>
 

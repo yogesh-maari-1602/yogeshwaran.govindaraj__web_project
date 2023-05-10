@@ -26,20 +26,22 @@
     <!-- java script -->
     <script>
         // Json//
-        const worker_id = [
+        // const worker_id = [
 
 
-            {
-                image: "https://ca.slack-edge.com/T032648LE-U041XM0M9N0-560074dc5510-512",
-                alt: "image",
-                name: "sridevan@gmail.com",
-                phone_number: "9150238692",
-            },
+        //     {
+        //         image: "https://ca.slack-edge.com/T032648LE-U041XM0M9N0-560074dc5510-512",
+        //         alt: "image",
+        //         name: "sridevan@gmail.com",
+        //         phone_number: "9150238692",
+        //     },
 
 
 
 
-        ]
+        // ]
+
+        let worker_id = JSON.parse(localStorage.getItem("user_address"))
 
         for (let i = 0; i < worker_id.length; i++) {
             let content = document.createElement("div");
@@ -52,7 +54,7 @@
 
             let image = document.createElement("img");
             image.setAttribute("width", "300px");
-            image.setAttribute("src", worker_id[i]["image"]);
+            image.setAttribute("src", worker_id[i]["pic"]);
             image.setAttribute("alt", "image");
             image_div.append(image);
 
@@ -61,11 +63,11 @@
 
 
             let name = document.createElement("h3");
-            name.innerText = worker_id[i]["name"];
+            name.innerText = worker_id[i]["username"];
             details.append(name);
 
             let number = document.createElement("p");
-            number.innerText = worker_id[i]["phone_number"];
+            number.innerText = worker_id[i]["phone"];
             details.append(number);
             content.append(details);
 
