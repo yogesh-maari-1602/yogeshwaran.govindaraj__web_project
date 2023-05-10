@@ -72,20 +72,17 @@
 
             const oneUser = JSON.parse(localStorage.getItem("user_login"));
             console.log(oneUser)
-            const user_info = JSON.parse(localStorage.getItem("null"));
+            const user_info = JSON.parse(localStorage.getItem("null"))
+            console.log(user_info)
             // console.log(user_info)
-            let select_user = user_info.find(function (event) {
-                let customerEmail = event["email"];
-                if (oneUser == customerEmail) {
-                    return true;
-                }
-            });
-            console.log(select_user);
+            let select_user = user_info.find(e => e["email"] == oneUser)
 
+            console.log(select_user)
 
 
 
             const img = document.getElementById("img");
+            console.log(img)
             const name = document.getElementById("name");
             const Phone_Number = document.getElementById("Phone_Number");
             const email = document.getElementById("Email");
@@ -93,10 +90,11 @@
 
             // Compare the values
 
+            console.log(select_user['pic'])
             img.value = select_user["pic"] || "";
             name.value = select_user["username"]
             Phone_Number.value = select_user["phone"]
-            email.value = select_user["Email"] || "";
+            email.value = select_user["email"]
             address.value = select_user["subject"] || "";
 
             let profile = document.getElementById("pro")
@@ -129,7 +127,7 @@
 
                 // assign the value to
 
-                const combineData = Object.assign(select_user, newData);
+                const combineData = Object.assign(newData, select_user);
                 console.log(combineData);
                 alert("successfully changed");
 
