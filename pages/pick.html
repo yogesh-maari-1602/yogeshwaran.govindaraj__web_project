@@ -21,29 +21,30 @@
         <form id="form">
             <br>
 
-            <label for="name">Name</label><br>
-            <input type="name" id="name" name="name" placeholder="Enter your name" required><br><br>
+            <!-- <label for="name">Name</label><br>
+            <input type="name" id="name" name="name" placeholder="Enter your name" required><br><br> -->
 
-            <label>Upload photo :</label>
-            <input class="input" id="img" type="url" placeholder="Add photo url" required /><br><br>
+            <!-- <label>Upload photo :</label>
+            <input class="input" id="img" type="url" placeholder="Add photo url" required /><br><br> -->
 
             <label for="subject">Home Address:</label><br><br>
-            <textarea id="subject" name="subject" placeholder="Fill address" rows="3" cols="40" required></textarea><br><br>
+            <textarea id="subject" name="subject" placeholder="Fill address" rows="3" cols="40"
+                required></textarea><br><br>
 
-            <label for="phone">Enter your phone number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter the Number" maxlength="10" required>
+            <!-- <label for="phone">Enter your phone number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter the Number" maxlength="10" required> -->
 
 
-            
+
 
 
             <div class="day">
                 <label for="date">Date:</label>
                 <input type="date" id="date" name="date" required><br><br>
-               
-                
-            
-                <label for="day">Day:</label>
+
+
+
+                <!-- <label for="day">Day:</label>
                 <input list="browsers" name="day" id="day" required>
                 <datalist id="browsers">
                     <option value="Monday">
@@ -53,15 +54,15 @@
                     <option value="Friday">
                     <option value="Saturday">
                     <option value="Sunday">
-                </datalist>
+                </datalist> -->
                 <!-- <input type="day" id="day" name="day"><br><br> -->
             </div>
-            
 
-            <!-- <label for="appt">Time:</label>
-            <input type="time" id="appt" name="appt" min="9:00" max="6:00" required><br><br> -->
 
-            <!-- <p>Office hours are 9am to 6pm</p><br><br> -->
+            <label for="appt">Time:</label>
+            <input type="time" id="appt" name="appt" min="10:00" max="5:00" required><br><br>
+
+            <p>Office hours are 9am to 6pm</p><br><br>
 
 
 
@@ -89,20 +90,20 @@
 
             let match = false;
 
-            const name = document.getElementById("name").value
-            const img = document.getElementById("img").value
+            // const name = document.getElementById("name").value
+            // const img = document.getElementById("img").value
             const address = document.getElementById("subject").value
-            const phonenumber = document.getElementById("phone").value
+            // const phonenumber = document.getElementById("phone").value
             const date = document.getElementById("date").value
-            const day = document.getElementById("day").value
+            const time = document.getElementById("appt").value
 
             let userobject = {
                 address,
-                phonenumber,
-                img,
-                name,
+                // phonenumber,
+                // img,
+                // name,
                 date,
-                day,
+                time,
             };
 
             array.push(userobject)
@@ -120,18 +121,11 @@
         });
 
 
-        // function pass() {
-        //     const form = document.querySelector("form");
-        //     const formData = new FormData(form);
-        //     const query = new URLSearchParams(formData).toString();
-        //     console.log(query);
-          
-        // }
 
     </script>
     <a href="../pages/calenderdemo.html"></a>
 
-    <!-- <a href="./user booking  list.html"></a> -->
+
 </body>
 
 </html>

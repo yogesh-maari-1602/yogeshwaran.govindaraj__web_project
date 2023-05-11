@@ -83,15 +83,14 @@ p{
 
 #phone{
     width: 80%;
+    font-size: 20px;
 }
 
 textarea{
     font-size: 18px;
 }
 
-#phone{
-    font-size: 20px;
-}
+
 
 #name{
     width: 300px;

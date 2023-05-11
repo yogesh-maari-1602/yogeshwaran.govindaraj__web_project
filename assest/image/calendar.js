@@ -15,18 +15,18 @@ const month_names = [
   "December",
 ];
 
-isLeapYear = (year) => {
+ let isLeapYear = (year) => {
   return (
     (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) ||
     (year % 100 === 0 && year % 400 === 0)
   );
 };
 
-getFebDays = (year) => {
+ let getFebDays = (year) => {
   return isLeapYear(year) ? 29 : 28;
 };
 
-generateCalendar = (month, year) => {
+let generateCalendar = (month, year) => {
   let calendar_days = calendar.querySelector(".calendar-days");
   let calendar_header_year = calendar.querySelector("#year");
 

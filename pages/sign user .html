@@ -22,26 +22,29 @@
                 <h1>Sign up </h1>
 
                 <p class="sim"> User Name</p>
-                <input type="text" id="username" required>
+                <input type="text" id="username" pattern="[A-Za-z]+" title="Name should be in letters"
+                    placeholder="Name" required>
 
 
                 <p class="sim1">Email</p>
-                <input type="email" id="email" required>
+                <input type="email" id="email" placeholder="Email" required>
 
 
                 <p for="phone" class="sim2">Phone number</p>
-                <input type="tel" id="phone" maxlength="10" required>
-
-
-                <!-- <p class="sim1" for="subject">Home Address</p>
-                <textarea id="subject" name="subject" placeholder="fill address" rows="8" cols="40"
-                    required></textarea><br><br> -->
+                <input type="tel" id="phone" pattern="[0-9]{10}" maxlength="10" minlength="10"
+                    placeholder="Phone number" required>
 
                 <p class="sim3"> Password</p>
-                <input type="password" id="password" required>
+                <input type="password" id="password"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" placeholder="Password"
+                    required>
 
                 <p class="sim2"> Confirm Password</p>
-                <input type="password" id="password" required>
+                <input type="password" id="password"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$"
+                    placeholder="Confirm Password" required>
+
+
 
                 <button onclick="submit()" class="btn" type="submit" id="signupbtn">Sign
                     Up</button>

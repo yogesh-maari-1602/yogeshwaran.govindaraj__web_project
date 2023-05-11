@@ -20,8 +20,7 @@
 
 
 
-    <!-- <button id="btn">Edit</button>
-    <button id="btn1">Save</button> -->
+
 
 
 
@@ -29,6 +28,8 @@
     <script>
 
         let worker_id = JSON.parse(localStorage.getItem("user_address"))
+
+        let currentWorker = worker_id.length - 1;
 
         // for (let i = 0; i < worker_id.length; i++) {
         let content = document.createElement("div");
@@ -41,7 +42,7 @@
 
         let image = document.createElement("img");
         image.setAttribute("width", "300px");
-        image.setAttribute("src", worker_id[0]["pic"]);
+        image.setAttribute("src", worker_id[currentWorker]["pic"]);
         image.setAttribute("alt", "image");
         image_div.append(image);
 
@@ -50,11 +51,11 @@
 
 
         let name = document.createElement("h3");
-        name.innerText = worker_id[0]["username"];
+        name.innerText = worker_id[currentWorker]["username"];
         details.append(name);
 
         let number = document.createElement("p");
-        number.innerText = worker_id[0]["phone"];
+        number.innerText = worker_id[currentWorker]["phone"];
         details.append(number);
         content.append(details);
 
@@ -66,11 +67,13 @@
 
 
 
-
+        let currentsigin = JSON.parse(localStorage.getItem("null"));
         let currentProduct = JSON.parse(localStorage.getItem("pick"));
-        // console.log(Data);
-
         console.log(currentProduct);
+        // current details length//
+        let currentapplier = (currentProduct.length) - 1;
+
+
         // for (let i = 0; i < currentProduct.length; i++) {
         let div_card = document.createElement("div");
         div_card.setAttribute("id", "form");
@@ -80,34 +83,34 @@
         card.setAttribute("class", "img");
         div_card.append(card);
 
-        let img = document.createElement("img");
-        img.setAttribute("src", currentProduct[0]["Url"]);
-        // image.setAttribute("alt", Card[i]["alt"]);
-        image.setAttribute("width", "200px");
-        card.append(img);
+        // let img = document.createElement("img");
+        // img.setAttribute("src", currentProduct[currentapplier]["Url"]);
+
+        // image.setAttribute("width", "200px");
+        // card.append(img);
 
         let detail = document.createElement("div");
         detail.setAttribute("class", "detail");
         div_card.append(detail);
 
         let fname = document.createElement("p");
-        fname.innerText = "Name :" + currentProduct[0]["name"];
+        fname.innerText = "username :" + currentsigin[currentapplier]["username"];
         detail.append(fname);
 
         let price = document.createElement("p");
-        price.innerText = "Phonenumber :" + currentProduct[0]["phonenumber"];
+        price.innerText = "Phonenumber :" + currentsigin[currentapplier]["phone"];
         detail.append(price);
 
         let type = document.createElement("p");
-        type.innerText = "address :" + currentProduct[0]["address"];
+        type.innerText = "Address :" + currentProduct[currentapplier]["address"];
         detail.append(type);
 
         let place = document.createElement("p");
-        place.innerText = "date :" + currentProduct[0]["date"];
+        place.innerText = "Date :" + currentProduct[currentapplier]["date"];
         detail.append(place);
 
         let description = document.createElement("p");
-        description.innerText = "day : " + currentProduct[0]["day"];
+        description.innerText = "Time : " + currentProduct[currentapplier]["time"];
         detail.append(description);
         document.querySelector(".new_section").append(div_card);
 

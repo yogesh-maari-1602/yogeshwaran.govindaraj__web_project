@@ -60,13 +60,11 @@ input {
   margin-left: 400px;
 }
 
-
 label {
   font-size: 20px;
   margin-left: 170px;
 }
-​
-/* for password eye symbol */
+
 form i {
   margin-left: -40px;
   cursor: pointer;
