@@ -27,10 +27,12 @@
                 </label><input name="username" type="text" id="username" autocomplete="off" required> -->
 
                 <p class="sim1"> Email</p>
-                <input name="email" type="email" id="email" required>
+                <input name="email" type="email" id="email" placeholder="Email" required>
 
                 <p class="sim2"> Password</p>
-                <input name="password" type="password" id="password" required>
+                <input name="password" type="password" id="password"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" placeholder="Password"
+                    required>
 
                 <a href="../pages/address worker.html"><button onclick="submit()" class="btn"
                         type="button">Log-in</button></a>

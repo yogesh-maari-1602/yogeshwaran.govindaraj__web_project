@@ -75,9 +75,9 @@
             const user_info = JSON.parse(localStorage.getItem("null"))
             // console.log(user_info)
             // console.log(user_info)
-            let select_user = user_info.find(e => e["email"] == oneUser)
+            let select_user = user_info.find((e) => e["email"] == oneUser)
 
-            // console.log(select_user)
+            console.log(select_user)
 
 
 
@@ -127,9 +127,9 @@
 
                 // assign the value to
 
-                const combineData = Object.assign(newData, select_user);
+                const combineData = Object.assign(select_user, newData);
                 // console.log(combineData);
-                alert("successfully changed");
+                alert("success fully changed your profile");
 
                 let findIndex = user_info.indexOf(select_user);
                 user_info[findIndex] = combineData;

@@ -121,6 +121,11 @@
         });
 
 
+        let inputDate = document.getElementById("date");
+        let today = new Date();
+        today.setDate(today.getDate() + 10);
+        let minDate = today.toISOString().split("T")[0];
+        inputDate.setAttribute("min", minDate);
 
     </script>
     <a href="../pages/calenderdemo.html"></a>
