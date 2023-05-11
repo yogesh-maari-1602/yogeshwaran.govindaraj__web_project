@@ -72,6 +72,10 @@
         console.log(currentProduct);
         // current details length//
         let currentapplier = (currentProduct.length) - 1;
+        let currentdata = (currentsigin.length) - 1;
+
+        // let currentapplier = ()
+
 
 
         // for (let i = 0; i < currentProduct.length; i++) {
@@ -94,11 +98,12 @@
         div_card.append(detail);
 
         let fname = document.createElement("p");
-        fname.innerText = "username :" + currentsigin[currentapplier]["username"];
+        fname.innerText = "Username :" + currentsigin[currentdata]["username"];
         detail.append(fname);
 
+
         let price = document.createElement("p");
-        price.innerText = "Phonenumber :" + currentsigin[currentapplier]["phone"];
+        price.innerText = "Phonenumber :" + currentsigin[currentdata]["phone"];
         detail.append(price);
 
         let type = document.createElement("p");
