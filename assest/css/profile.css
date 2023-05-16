@@ -1,5 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: #e8fcdbfd;
+}
+
+
+
 button {
-  background-color: rgb(112, 218, 159);
+  background-color: rgb(21, 204, 21);
   color: black;
   border: none;
   border-radius: 5px;
@@ -36,12 +47,14 @@ body {
   align-items: center;
   align-content: center;
   text-align: center;
+  background-color: #C1D0B5;
   box-shadow: 1px 1px 3px 3px rgb(18, 219, 188);
   border-radius: 10px;
-  /* height: 780px; */
+  margin-left: 100px;
   margin-top: 30px;
   width: 1000px;
   height: 800px;
+
 
   /* margin: 20px; */
   /* margin-left: px; */

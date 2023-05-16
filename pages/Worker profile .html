@@ -10,11 +10,26 @@
 </head>
 
 <body>
+    <div id="form">
+        <h1 class="our-team">Workers id</h1>
+        <div class="full_section">
+            <div class="photo-section"></div>
+            <div class="new_section"></div>
 
-    <h1 class="our-team">Workers id</h1>
-    <div class="full_section">
-        <div class="photo-section"></div>
-        <div class="new_section"></div>
+
+        </div>
+    </div>
+    <button type="submit">submit</button>
+
+
+
+
+    <div class="wrong">
+        <a href="./calenderdemo.html"><button type="submit" value="true" id="correct" style='font-size:50px;'
+                onclick="submit()">&#10004;</button></a>
+        <!-- <p>I will display &#10004;</p> -->
+        <button type="submit" value="false" style='font-size:50px;' onclick="false()">&#10006;</button>
+        <!-- <p>I will display &#10006;</p> -->
 
     </div>
 
@@ -22,10 +37,13 @@
 
 
 
-
-
     <!-- java script -->
     <script>
+
+
+        // function true(){
+        //     alert("true")
+        // }
 
         let worker_id = JSON.parse(localStorage.getItem("user_address"))
 
@@ -121,43 +139,16 @@
 
         // }
 
-
-        // edit data
-
-        // const combineData = Object.assign(newData, select_user);
-        // console.log(combineData);
-        // alert("successfully changed");
-
-        // let findIndex = user_info.indexOf(select_user);
-        // user_info[findIndex] = combineData;
-        // localStorage.setItem("null", JSON.stringify(user_info));
-
-        // function submit() {
-        //     alert("success fully happen")
-
-        // }
-
-
-
-        // function submit1() {
-        //     alert("worker not picking after 5 mins you try again failed")
-        // }
-
-
-
-
+        function submit() {
+            window.location.href = "pages/calenderdemo.html"
+        }
 
     </script>
 
 
+    <!-- <script src="./two link .js"></script> -->
 
-    <!-- <div class="image">
-        <a href="../pages/calenderdemo.html"><img onclick="submit()" src="../assest/image/tick_green.jpg"
-                width="60px"></a>
 
-        <a href="../pages/address worker.html"><img onclick="submit1()" src="../assest/image/wrong (1).png"
-                width="60px"></a>
-    </div> -->
 
 </body>
 

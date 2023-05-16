@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #e8fcdbfd;
 
 }
 
@@ -24,8 +25,9 @@ form {
 }
 
 h1{
-    color: lightskyblue;
+   font-family: initial;
     font-family: initial;
+    color: black;
 }
 
 
@@ -51,7 +53,7 @@ h1{
     width: 320px;
     margin-right: 10px;
     color: white;
-    background-color: rgb(18, 189, 246);
+     background-color: rgb(21, 204, 21);
     font-size: 18px;
     border: none;
     border-radius: 5px;
@@ -69,7 +71,9 @@ a {
 }
 
 .main {
-    background-color: #f5f5f5;
+     background-color: #C1D0B5;
+    box-shadow: 1px 1px 3px 3px rgb(18, 219, 188);
+     border-radius: 10px;
     height: 700px;
     width: 400px;
     padding: 5px 10px;
@@ -107,7 +111,7 @@ a {
 
 
 
-.fa-brands {
+img {
     color: black;
     padding-left: 20px;
     font-size: 33px;
@@ -115,8 +119,22 @@ a {
 
     
 }
+
+
+
+.fa-brands {
+
+    background-color: antiquewhite;
+    
+    border-radius: 30px;
+    margin-top: 30px;
+    font-size: 30px;
+    margin-right: 40px;
+   
+}
+
 .fa-brands:hover{
-    color: #adff2f;
+  
     font-size: 35px;
 }
 
