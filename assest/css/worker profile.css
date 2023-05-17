@@ -60,7 +60,8 @@ flex-wrap: wrap;
 .our-team{
      margin-top: 250px;
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
+    font-family: cursive;
 }
 
 .image{
