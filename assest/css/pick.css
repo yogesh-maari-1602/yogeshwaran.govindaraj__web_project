@@ -13,6 +13,13 @@ body{
    
 }
 
+img{
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 100px;
+    /* background-color: red; */
+}
+
 textarea{
     border: none;
     outline: none;
@@ -20,8 +27,8 @@ textarea{
 
 
 .full-page{
-    margin-left:510px;
-    margin-top: 60px;
+    margin-left:850px;
+    margin-top: -580px;
     background-size: 30px;
     background-color: #615e5e88;
     box-shadow: 1px 1px 3px 3px rgb(18, 219, 188);
@@ -101,8 +108,27 @@ p{
     font-size: 20px;
 }
 
-/* textarea{
-    font-size: 18px;
+
+.para{
+    line-height: 1.7;
+}
+.para p{
+    color: black;
+    font-size: 40px;
+    margin-left: 80px;
+    font-family: cursive;
+}
+
+.para img{
+    width: 300px;
+    margin-left: 200px;
+}
+
+
+
+/* .para label{
+     color: black;
+     margin-top: 30px;
 } */
 
 
@@ -114,3 +140,9 @@ p{
 .day{
     display: flex;
 }
+
+.time{
+    display: flex;
+    gap: 2rem;
+}
+

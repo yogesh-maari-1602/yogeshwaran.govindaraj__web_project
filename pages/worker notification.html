@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/worker notification.css">
+    <title>worker Notification</title>
+</head>
+
+<body>
+
+    <div class="img">
+        <a href="./worker profile.html"><img src="../assest/image/logo-removebg-preview.png" alt="Photo 1"
+                width="100px"></a>
+        <p>Booking list</p>
+    </div>
+
+
+
+
+
+    <!-- <div class="wrapper">
+
+
+
+        <div class="notifications__item">
+
+
+            <div class="notifications__item__content">
+                <span class="notifications__item__title">Verdieu Steeve</span>
+                <span class="notifications__item__message">X6JQ+2M7, MGR St, Thanthai Periyar Nagar, Thandhai
+                    Periyar Nagar, Tharamani, Chennai, Tamil Nadu 600113</span>
+            </div>
+            <div class="btn">
+                <button class="btn-1">Accept</button>
+                <button class="btn-2">Decline</button>
+            </div>
+
+        </div>
+
+    </div> -->
+
+    <script>
+
+
+
+        let pick = JSON.parse(localStorage.getItem("pick"));
+
+        // let user_detail = JSON.parse(localStorage.getItem("newuserInfo"));
+
+        // let get_user = user_detail.find((e) => e.Email == login_id);
+
+        for (let i = 0; i < pick.length; i++) {
+
+
+            let content = document.createElement("div");
+            content.setAttribute("class", "wrapper");
+
+
+            let item = document.createElement("div");
+            item.setAttribute("class", "notifications__item");
+            content.append(item);
+
+            let notifications__item = document.createElement("div");
+            notifications__item.setAttribute("class", "notifications__item__content");
+            item.append(notifications__item);
+
+            let span1 = document.createElement("span");
+            span1.setAttribute("class", "notifications__item__title");
+            span1.innerText = pick[i]["userName"]
+            notifications__item.append(span1);
+
+
+            let span2 = document.createElement("span");
+            span2.setAttribute("class", "notifications__item__message");
+            span2.innerText = pick[i]["address"]
+            notifications__item.append(span2);
+
+            let btn = document.createElement("div");
+            btn.setAttribute("class", "btn");
+            item.append(btn);
+
+            let btn1 = document.createElement("button");
+            btn1.setAttribute("class", "btn-1");
+            // btn1.setAttribute("class", "id");
+            btn1.setAttribute("onclick", "accept(this.id)");
+            btn1.setAttribute("id", pick[i]["pick"]);
+            btn1.innerText = "Accept"
+            btn.append(btn1);
+
+
+            let btn2 = document.createElement("button");
+            btn2.setAttribute("class", "btn-2");
+            btn2.innerText = "Decline"
+            btn.append(btn2);
+
+
+            function onclick(id) {
+                let array = [];
+
+
+                if (localStorage.getItem("accept") != null) {
+                    array = JSON.parse(localStorage.getItem("accept"));
+                }
+
+                for (let i = 0; i < pick.length; i++) {
+                    let current_id = pick[i];
+
+                    if (array === null) {
+                        let workerObj = {}
+                        workerObj.push(current_id);
+                        localStorage.setItem("accept", JSON.stringify(workerObj));
+                    } else {
+                        array.push(current_id);
+                        localStorage.setItem("accept", JSON.stringify(array));
+                    }
+                }
+
+            }
+
+            document.querySelector("body").append(content)
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -15,27 +15,25 @@
 </head>
 
 <body>
+
+    <!-- <button class="out">Logout</button width="300px"> -->
     <header>
-        <!-- <a href="./user booking  list.html"><button class="History">History</button></a>
-        <a href="./leaderborad.html"><button class="booking">booking day</button></a>
-        <a href="./pick.html"><button class="pick">Pick me</button></a> -->
-        <a href="./profile.html"><img class="image" src="../assest/image/profile.png" alt="image" width="50px"></a>
+        <a href="../index.html"><img src="../assest/image/logo-removebg-preview.png" width="90px"></a>
+
+        <a href="./profile.html"><img class="image" src="../assest/image/profile.png" alt="image" width="60px"></a>
+        <a href="./user.notification.html"><button>Nofication</button></a>
+        <a href="../index.html"><button class="log">Logout</button></a>
     </header>
 
     <div class="wrapper">
         <header>
             <P class="current-date">March 2023</P>
-            <!-- <a href="#"><img src="./external-less-than-multimedia-line-30px-ios-line-2px-amoghdesign.png"></a>
-            <a href="#"><img src="./more-than.png"></a> -->
-
-
             <div class="icons">
-                <!-- <img src="./greate_download-removebg-preview.png"> -->
                 <span id="prev" class="fa-solid fa-less-than"></span>
                 <span id="next" class="fa-solid fa-greater-than"></span>
-
             </div>
         </header>
+
         <div class="calendar">
             <ul class="weeks">
                 <li>Sun</li>
@@ -46,58 +44,92 @@
                 <li>Fri</li>
                 <li>Sat</li>
             </ul>
-
-            <ul class="days">
-                <!-- <li class="inactive">28</li>
-                <li class="inactive">29</li>
-                <li class="inactive">30</li>
-                <li class="inactive">31</li>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-                <li>13</li>
-                <li>14</li>
-                <li>15</li>
-                <li>16</li>
-                <li>17</li>
-                <li>18</li>
-                <li>19</li>
-                <li class="active">20</li>
-                <li>21</li>
-                <li>22</li>
-                <li>23</li>
-                <li>24</li>
-                <li>25</li>
-                <li>26</li>
-                <li>27</li>
-                <li>28</li>
-                <li>29</li>
-                <li>30</li>
-                <li class="inactive">1</li> -->
-            </ul>
-            <a href="./pick.html"><button class="btn">Pick Me</button></a>
-
+            <ul class="days"></ul>
         </div>
     </div>
 
 
+    <div class="card">
+        <img src="../assest/image/profile.png" width="50">
+        <p class="name">yogesh</p>
+        <p class="phone">6380843014</p>
+
+    </div>
+
+
+
 
     <!-- script -->
+
+
+
+
+
+
+
+
     <script src="./two link .js"></script>
 
     <script>
+
+        let user = JSON.parse(localStorage.getItem(""))
+
+        let card = document.createElement("div");
+        card.setAttribute("class", "card");
+
+        let img = document.createElement("img");
+        img.setAttribute("width", "300px");
+        img.setAttribute("alt", "image");
+        card.append(img)
+
+        let p1 = document.createElement("p")
+        p1.setAttribute("class", "name");
+        card.append(p1);
+
+        let p2 = document.createElement("p")
+        p2.setAttribute("class", "phone")
+        card.append(p2);
+
+
+
+
+
+
+        // let image = document.createElement("img");
+        // image.setAttribute("width", "px");
+        // image.setAttribute("src",);
+        // image.setAttribute("alt", "image");
+        // card.append(image);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         const currentdate = document.querySelector(".current-date"),
             daysTag = document.querySelector(".days"),
             prevNextIcon = document.querySelectorAll(".icons span");
+
         // getting new date//
 
         let date = new Date(),
@@ -106,8 +138,6 @@
 
         const month = ["January", "February", "March", "April", "May", "June", "July",
             "August", "September", "October", "November", "December"]
-
-
 
         const renderCalendar = () => {
             // last date of month//
@@ -169,17 +199,6 @@
         function pass() {
             window.location.href = "/pages/pick.html"
         }
-
-        function pass() {
-            window.location.href = "/pages/user booking  list.html"
-        }
-
-
-
-        // function submit() {
-        //     alert("worker not picking after 5 mins you try again failed")
-        // }
-
 
     </script>
 

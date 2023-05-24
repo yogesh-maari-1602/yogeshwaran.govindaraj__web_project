@@ -11,6 +11,18 @@
 
 <body>
 
+    <a href="../index.html"><img src="../assest/image/logo-removebg-preview.png" width="50px"></a>
+
+    <div class="para">
+        <p>To view the calender page <br>
+            To book garbage collection for worker</p>
+
+
+        <img src="../assest/image/pick rash-310219_1280.png" width="50px">
+
+    </div>
+
+
     <div class="full-page">
 
 
@@ -21,53 +33,29 @@
         <form id="form">
             <br>
 
-            <!-- <label for="name">Name</label><br>
-            <input type="name" id="name" name="name" placeholder="Enter your name" required><br><br> -->
 
-            <!-- <label>Upload photo :</label>
-            <input class="input" id="img" type="url" placeholder="Add photo url" required /><br><br> -->
 
             <label for="subject">Home Address:</label><br><br>
             <textarea type="text" id="subject" name="subject" placeholder="Fill address" rows="6" cols="40"
                 pattern="^(?=.{0,200}$)[A-Za-z0-9!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+(?:\s[A-Za-z0-9\s!@#$%^&*()_+-={}[\]|\\;:'>,.?/]+[A-Za-z0-9]+){0,10}$"
                 required></textarea><br><br>
 
-            <!-- <label for="phone">Enter your phone number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter the Number" maxlength="10" required> -->
-
-
-
-
-
             <div class="day">
                 <label for="date">Date:</label>
                 <input type="date" id="date" name="date" required><br><br>
+            </div>
 
-
-
-                <!-- <label for="day">Day:</label>
-                <input list="browsers" name="day" id="day" required>
-                <datalist id="browsers">
-                    <option value="Monday">
-                    <option value="Tuesday">
-                    <option value="Wednesday">
-                    <option value="Thursday">
-                    <option value="Friday">
-                    <option value="Saturday">
-                    <option value="Sunday">
-                </datalist> -->
-                <!-- <input type="day" id="day" name="day"><br><br> -->
+            <div class="time">
+                <label for="appt">Time:</label>
+                <input type="time0" id="appt0" name="appt" min="10:00" max="5:00" required><br><br><br>
+                to
+                <input type="time1" id="appt1" name="appt" min="10:00" max="5:00" required>
             </div>
 
 
-            <label for="appt">Time:</label>
-            <input type="time" id="appt" name="appt" min="10:00" max="5:00" required><br><br>
+            <p>Office hours are 10am to 5pm</p><br><br>
 
-            <p>Office hours are 9am to 6pm</p><br><br>
-
-
-
-            <button type="submit">Pick the garbage</button>
+            <button type="submit">Submit</button>
 
         </form>
 
@@ -77,6 +65,12 @@
 
     <script>
 
+        let login_id = JSON.parse(localStorage.getItem("user_login"));
+
+        let user_detail = JSON.parse(localStorage.getItem("newuserInfo"));
+
+
+        let get_user = user_detail.find((e) => e.Email == login_id);
 
         let form = document.getElementById("form")
         document.createElement("pick")
@@ -91,20 +85,26 @@
 
             let match = false;
 
+            const id = Date.now();
+            console.log(id);
+
             // const name = document.getElementById("name").value
             // const img = document.getElementById("img").value
             const address = document.getElementById("subject").value
             // const phonenumber = document.getElementById("phone").value
             const date = document.getElementById("date").value
-            const time = document.getElementById("appt").value
+            const time0 = document.getElementById("appt0").value
+            const time1 = document.getElementById("appt1").value
+            const userName = get_user["FullName"]
+
 
             let userobject = {
                 address,
-                // phonenumber,
-                // img,
-                // name,
                 date,
-                time,
+                time0,
+                time1,
+                userName,
+                id,
             };
 
             array.push(userobject)
@@ -121,6 +121,8 @@
             window.location.href = url;
         });
 
+
+        //data next day//
 
         let inputDate = document.getElementById("date");
         let today = new Date();

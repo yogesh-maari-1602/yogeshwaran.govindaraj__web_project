@@ -17,25 +17,20 @@
     <div class="container">
 
 
-        <form id="login">
+        <form id="form" action="./address worker.html">
 
             <div class="main">
 
                 <h1>Log In </h1>
-
-                <!-- <p class="sim"> Username</p>
-                </label><input name="username" type="text" id="username" autocomplete="off" required> -->
-
-                <p class="sim1"> Email</p>
+                <p class="sim1">Email</p>
                 <input name="email" type="email" id="email" placeholder="Email" required>
 
-                <p class="sim2"> Password</p>
+                <p class="sim2">Password</p>
                 <input name="password" type="password" id="password"
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" placeholder="Password"
                     required>
 
-                <a href="../pages/address worker.html"><button onclick="submit()" class="btn"
-                        type="button">Log-in</button></a>
+                <button class="btn" type="submit">Log-in</button>
 
                 <div class="link">
 
@@ -50,59 +45,53 @@
                 <div class="icon">
                     <img src="../assest/image/icons8-facebook-48.png">
                     <img src="../assest/image/icons8-google-48.png">
-
                 </div>
-
             </div>
-
         </form>
-
     </div>
 
 
     <script>
-        let logIn = document.getElementById("login");
+        let logIn = document.getElementById("form");
         logIn.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            let user_arr = [];
+            let userArr = [];
 
-            let defaultData = JSON.parse(localStorage.getItem("user_info"));
+            let defaultData = JSON.parse(localStorage.getItem("worker_info"));
             console.log(defaultData);
 
-
-            // let name = document.getElementById("username").value
-            let Email = document.getElementById("email").value;
+            let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
 
-            console.log(username, email, password);
-
-            //   [  { }, {}, {}, {}, {0}, {} ]
+            console.log('email:', email);
+            console.log('password:', password)
+            // console.log('defaultData:', defaultData);
 
             let isMatch = false;
 
             for (let i = 0; i < defaultData.length; i++) {
                 if (
-                    Email == defaultData[i].email &&
-                    password == defaultData[i].password
+                    email == defaultData[i].Email &&
+                    password == defaultData[i].Password
                 ) {
                     isMatch = true;
-                    user_arr.push(defaultData[i]);
-                    window.localStorage.setItem("login_user", JSON.stringify(user_arr));
+                    userArr.push(defaultData[i]);
+                    window.localStorage.setItem("worker_login", JSON.stringify(userArr[0]["Email"]));
                     break;
-
-                } else {
+                }
+                else {
                     isMatch = false;
                 }
             }
 
 
             if (isMatch === true) {
-                alert("success")
+                alert("success full login welcome to over website")
 
 
 
-                window.location.href = "pages/address worker.html"
+                window.location.href = "/pages/worker profile.html"
                 console.log("working")
 
             } else {
@@ -114,11 +103,11 @@
 
         });
 
-        // function submit() {
-        //     window.location.href = "/pages/address worker.html"
-        // }
+
+
 
     </script>
+    <a href="../pages/worker profile.html"></a>
 
 
     <!-- <a href="../pages/address.html"></a> -->

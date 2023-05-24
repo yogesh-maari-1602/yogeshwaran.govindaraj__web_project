@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/workeredit.css">
+    <title>Worker profile page</title>
+</head>
+
+<body>
+
+    <div class="section">
+        <img src="../assest/image/logo-removebg-preview.png" alt="Photo 1">
+        <p>Profile page</p>
+    </div>
+
+    <form class="main" id="form">
+
+        <a href="./worker profile.html">
+            <p class="arrow"> &larr;</p>
+        </a>
+
+
+        <div>
+            <img id="pro" src="" alt="" width="50px">
+        </div>
+
+
+        <div class="form" id="form">
+            <label>Upload photo :</label>
+            <input class="input" id="img" type="url" placeholder="Add photo url" required /><br><br>
+
+            <label for="User name">User name :</label>
+            <input id="name" class="input" placeholder="User Name" /><br><br>
+
+
+            <label for="ph no">Phone Number :</label>
+            <input id="Phone_Number" class="input" placeholder="Phone Number" maxlength="10" /><br><br>
+
+            <label for="email">Your Email :</label>
+            <input id="Email" class="input" placeholder="Email" /><br><br>
+
+            <button type="submit">SUBMIT</button>
+
+        </div>
+    </form>
+
+
+
+    <script>
+        const worker = JSON.parse(localStorage.getItem("worker_login"));
+        const user_address = JSON.parse(localStorage.getItem("user_address"));
+        const worker_info = JSON.parse(localStorage.getItem("worker_info"));
+        let select_worker = worker_info.find((e) => e["Email"] == worker)
+
+        console.log(select_worker);
+
+
+        const img = document.getElementById("img");
+        const name = document.getElementById("name");
+        const Phone_Number = document.getElementById("Phone_Number");
+        const email = document.getElementById("Email");
+
+        // compare the values//
+
+        img.value = select_worker["pic"] || "";
+        name.value = select_worker["FullName"]
+        Phone_Number.value = select_worker["Phone_number"]
+        email.value = select_worker["Email"]
+
+
+        let profile = document.getElementById("pro")
+        profile.setAttribute("src", select_worker["pic"]);
+
+
+        //to replace the value 
+
+        const form = document.getElementById("form");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let pic = document.getElementById("img").value;
+            let FullName = document.getElementById("name").value;
+            let Phone_number = document.getElementById("Phone_Number").value;
+            let Email = document.getElementById("Email").value;
+
+
+
+            let oldData = {
+                pic,
+                FullName,
+                Phone_number,
+                Email,
+            }
+
+
+            //assign the value to form
+
+            const workerData = Object.assign(select_worker, oldData);
+            alert("success fully changed your profile");
+
+            let findIndex = worker_info.indexOf(select_worker);
+            worker_info[findIndex] = workerData;
+            localStorage.setItem("worker_info", JSON.stringify(worker_info));
+        });
+
+
+    </script>
+</body>
+
+</html>

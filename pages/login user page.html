@@ -16,28 +16,23 @@
     <div class="container">
 
 
-        <form id="login">
+        <form id="form" action="pick.html">
 
             <div class="main">
 
                 <h1>Log In </h1>
-
-
-                <p class="sim1"> Email</p>
+                <p class="sim1">Email</p>
                 <input name="email" type="email" id="email" placeholder="Email" required>
 
-                <p class="sim2"> Password</p>
+                <p class="sim2">Password</p>
                 <input name="password" type="password" id="password"
                     pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,32}$" placeholder="Password"
                     required>
 
-                <a href="/pages/calenderdemo.html"> <button onclick="submit()" class="btn"
-                        type="submit">Log-in</button></a>
+                <button class="btn" type="submit">Log-in</button>
 
                 <div class="link">
-
-                    <p>Don't have an Account? <a href="../pages/sign user .html">Sign-up→</p>
-                    </a>
+                    <p>Don't have an Account? <a href="../pages/sign user .html">Sign-up→</p></a>
                 </div>
 
 
@@ -52,37 +47,35 @@
 
 
     <script>
-        let logIn = document.getElementById("login");
+        let logIn = document.getElementById("form");
         logIn.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            let user_arr = [];
+            let userArr = [];
 
-            let defaultData = JSON.parse(localStorage.getItem("null"));
+            let defaultData = JSON.parse(localStorage.getItem("newuserInfo"));
             console.log(defaultData);
 
-
-
-            let Email = document.getElementById("email").value;
+            let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
 
-            console.log(email, password);
-
-            //   [  { }, {}, {}, {}, {0}, {} ]
+            console.log('email:', email);
+            console.log('password:', password)
+            // console.log('defaultData:', defaultData);
 
             let isMatch = false;
 
             for (let i = 0; i < defaultData.length; i++) {
                 if (
-                    Email == defaultData[i].email &&
-                    password == defaultData[i].password
+                    email == defaultData[i].Email &&
+                    password == defaultData[i].Password
                 ) {
                     isMatch = true;
-                    user_arr.push(defaultData[i]);
-                    window.localStorage.setItem("user_login", JSON.stringify(user_arr[0]["email"]));
+                    userArr.push(defaultData[i]);
+                    window.localStorage.setItem("user_login", JSON.stringify(userArr[0]["Email"]));
                     break;
-
-                } else {
+                }
+                else {
                     isMatch = false;
                 }
             }
@@ -93,7 +86,7 @@
 
 
 
-                window.location.href = "/pages/calenderdemo.html"
+                window.location.href = "/pages/pick.html"
                 console.log("working")
 
             } else {
@@ -104,16 +97,10 @@
 
 
         });
-
-        // function submit() {
-        //     window.location.href = "/pages/address.html"
-        // }
-
     </script>
 
+    <a href="./pick.html"></a>
 
-    <!-- <a href="../pages/address.html"></a> -->
-    <a href="../pages/calenderdemo.html">
 </body>
 
 </html>

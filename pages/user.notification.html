@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/user notification.css">
+    <title>User Notification</title>
+</head>
+
+<body>
+
+    <div class="img">
+        <a href="./worker profile.html"><img src="../assest/image/logo-removebg-preview.png" alt="Photo 1"
+                width="100px"></a>
+        <p>Worker reply</p>
+    </div>
+
+
+
+    <!-- <div class="wrapper">
+
+
+
+        <div class="notifications__item">
+
+
+            <div class="notifications__item__content">
+                <span class="notifications__item__title">Verdieu Steeve</span>
+                <span class="notifications__item__message">Accept your booking</span>
+                <button class="btn-1">Accept</button>
+            </div>
+        </div>
+
+    </div> -->
+
+
+    <script>
+        let accept = JSON.parse(localStorage.getItem("accept"));
+
+
+        for (let i = 0; i < accept.length; i++) {
+
+
+            let wrapper = document.createElement("div");
+            wrapper.setAttribute("class", "wrapper");
+
+            let notifications__item = document.createElement("div");
+            notifications__item.setAttribute("class", "notifications__item");
+            wrapper.append(notifications__item);
+
+            let notifications__item__content = document.createElement("div");
+            notifications__item__content.setAttribute("class", "notifications__item__content");
+            notifications__item.append(notifications__item__content);
+
+
+            let span1 = document.createElement("span");
+            span1.setAttribute("class", "notifications__item__title");
+            span1.innerText = accept[i]["userName"];
+            notifications__item__content.append(span1);
+
+            let span2 = document.createElement("span");
+            span2.setAttribute("class", "notifications__item__message");
+            span2.innerText = accept[i]["id"]
+            notifications__item__content.append(span2);
+
+            let button = document.createElement("button");
+            button.setAttribute("class", "btn-1");
+            button.innerText = "Accepted"
+            span2.append(button);
+
+
+
+
+            document.querySelector("body").append(wrapper)
+        }
+    </script>
+</body>
+
+</html>

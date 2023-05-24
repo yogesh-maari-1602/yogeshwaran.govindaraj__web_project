@@ -84,8 +84,6 @@ a {
 
 .main1 {
      background-color: #C1D0B5;
-     box-shadow: 1px 1px 3px 3px rgb(18, 219, 188);
-  border-radius: 10px;
      /* filter: blur(0.4px); */
     height: 800px;
     width: 400px;
@@ -151,4 +149,6 @@ a {
     font-size: 22px;
 }
 
-
+.form-input{
+    padding: 20px;
+}

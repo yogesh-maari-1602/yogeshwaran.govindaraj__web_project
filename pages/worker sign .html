@@ -25,9 +25,9 @@
                 <input type="text" id="username" pattern="[A-Za-z]+" title="Name should be in letters"
                     placeholder="Name" required>
 
-
                 <p class="sim1">Email</p>
                 <input type="email" id="email" placeholder="Email" required>
+
 
                 <p for="phone" class="sim">Phone number</p>
                 <input type="tel" id="phone" pattern="[0-9]{10}" maxlength="10" minlength="10"
@@ -51,116 +51,65 @@
                 </div>
 
 
-                <a href="../pages/login user page.html"></a>
-
-                <!-- icon -->
-                <div class="icon">
-                    <img src="../assest/image/icons8-facebook-48.png" alt="image">
-                    <img src="../assest/image/icons8-google-48.png" alt="image">
-                </div>
+                <a href="../pages/login worker.html"></a>
             </div>
         </form>
     </div>
 
     <script>
-        // -----------------
-        let form = document.getElementById('form')
 
-        form.addEventListener('submit', function (event) {
+
+
+        let signUpform = document.getElementById("form");
+        document.createElement("worker_info");
+        // code for the process while click the sign up button
+        signUpform.addEventListener("submit", function (event) {
             event.preventDefault();
+            try {
+                let array = [];
+                if (localStorage.getItem("worker_info") != null) {
+                    array = JSON.parse(localStorage.getItem("worker_info"));
+                }
+                let match = false;
+                // to get the value from form by their ID
+                const id = Date.now();
+                console.log(id);
+                const FullName = document.getElementById("username").value;
+                const Email = document.getElementById("email").value.toLowerCase();
+                const Phone_number = document.getElementById("phone").value;
+                const Password = document.getElementById("password").value;
 
-            let worker = []
-            let defaultData = JSON.parse(localStorage.getItem("worker_sign"));
-            console.log(defaultData);
+                if (match == true) {
+                    alert("Email is already Exist");
+                    return false;
+                } else {
+                    let userObj = {
+                        FullName,
+                        id,
+                        Email,
+                        Phone_number,
+                        Password,
 
-            const username = document.getElementById('username').value
-            const phone = document.getElementById('phone').value
-            const email = document.getElementById('email').value
-            const password = document.getElementById('password').value
+                    };
+                    console.log(userObj);
+                    array.push(userObj);
+                    const str = JSON.stringify(array);
 
-            // if (worker_sign in localStorage) {
-            //     users = JSON.parse(localStorage.getItem(worker_sign));
-            // }
-            let userObject = {
-                username,
-                phone,
-                email,
-                password,
-                // confirmPassword: document.getElementById('confirmpassword').value,
-            };
-            worker.push(userObject);
-            localStorage.setItem(defaultData, JSON.stringify(worker));
-            console.log('appended to the local storage.');
-
-            window.location.href = "/pages/login worker.html";
-
+                    localStorage.setItem("worker_info", str);
+                    console.log(str);
+                    alert("You created your account successfully");
+                    window.location.href = "/pages/login worker.html";
+                }
+            } catch (error) {
+                console.error(error);
+            }
         });
-
-        function submit() {
-
+        function log() {
+            window.location.href = "/pages/login worker.html";
         }
 
-
-
-
     </script>
-
-
-
-
-
-
-
-
-
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-        import {
-            getDatabase,
-            set,
-            ref,
-            onValue,
-            push,
-        } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-
-
-
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAA1xUBYSexbuDjnNBhTFTueJ8D_yaC68U",
-            authDomain: "garbage-collection-websi-7119c.firebaseapp.com",
-            databaseURL: "https://garbage-collection-websi-7119c-default-rtdb.firebaseio.com",
-            projectId: "garbage-collection-websi-7119c",
-            storageBucket: "garbage-collection-websi-7119c.appspot.com",
-            messagingSenderId: "697337601892",
-            appId: "1:697337601892:web:b6440831b346f6a06ca471"
-        };
-
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-
-
-        //database collection create the firebase//
-
-        let database = getDatabase();
-
-        console.log(database);
-
-        //get reffrences to key name create in database//
-        const starCountRef = ref(database, 'name/');
-        onValue(starCountRef, (snapshot) => {
-            const data = snapshot.val();
-
-            console.log(data)
-        });
-
-    </script>
-
-
-    <a href="../pages/login user page.html"></a>
+    <a href="../pages/login worker.html"></a>
 
 </body>
 

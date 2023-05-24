@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="../assest/css/profile.css" />
@@ -55,13 +55,6 @@
                 <!-- <a href="./calenderdemo.html"><button>Back</button></a> -->
             </div>
         </form>
-        <footer></footer>
-
-
-
-
-
-
 
 
 
@@ -71,30 +64,32 @@
 
 
             const oneUser = JSON.parse(localStorage.getItem("user_login"));
-            // console.log(oneUser)
-            const user_info = JSON.parse(localStorage.getItem("null"))
+            console.log(oneUser)
+            const user_info = JSON.parse(localStorage.getItem("newuserInfo"))
+            console.log(user_info)
             // console.log(user_info)
-            // console.log(user_info)
-            let select_user = user_info.find((e) => e["email"] == oneUser)
+            let select_user = user_info.find((e) => e["Email"] == oneUser)
 
             console.log(select_user)
 
 
 
             const img = document.getElementById("img");
-            // console.log(img)
+            console.log(img)
             const name = document.getElementById("name");
             const Phone_Number = document.getElementById("Phone_Number");
             const email = document.getElementById("Email");
             const address = document.getElementById("address")
-
+            console.log("yogesh");
             // Compare the values
+
+            console.log(select_user)
 
             // console.log(select_user['pic'])
             img.value = select_user["pic"] || "";
-            name.value = select_user["username"]
-            Phone_Number.value = select_user["phone"]
-            email.value = select_user["email"]
+            name.value = select_user["FullName"]
+            Phone_Number.value = select_user["Phone_number"]
+            email.value = select_user["Email"]
             address.value = select_user["subject"] || "";
 
             let profile = document.getElementById("pro")
@@ -108,8 +103,8 @@
 
                 // let input_div = document.getElementById("img").value;
                 let pic = document.getElementById("img").value;
-                let username = document.getElementById("name").value;
-                let phone = document.getElementById("Phone_Number").value;
+                let FullName = document.getElementById("name").value;
+                let Phone_number = document.getElementById("Phone_Number").value;
                 let Email = document.getElementById("Email").value;
                 let subject = document.getElementById("address").value;
 
@@ -118,8 +113,8 @@
 
                 let newData = {
                     pic,
-                    username,
-                    phone,
+                    FullName,
+                    Phone_number,
                     Email,
                     subject,
                 };
@@ -133,7 +128,7 @@
 
                 let findIndex = user_info.indexOf(select_user);
                 user_info[findIndex] = combineData;
-                localStorage.setItem("null", JSON.stringify(user_info));
+                localStorage.setItem("newuserInfo", JSON.stringify(user_info));
                 // window.location.href = "/pages/profile.html";
                 // window.history.back();
             });

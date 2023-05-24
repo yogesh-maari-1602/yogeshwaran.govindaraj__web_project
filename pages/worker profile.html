@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/worker new.css">
+    <title>worker profile</title>
+</head>
+
+<body>
+
+
+    <div id="form">
+        <header id="head">
+            <!-- <a href="../index.html"><img src="../assest/image/logo-removebg-preview.png" alt="Photo 1" width="50px"></a>
+            <a href="./worker notification.html"><button id="myButton">Notification</button></a>
+            <a href="./workerprofilepage.html"><img src="../assest/image/profile.png" alt="Photo 2"></a> -->
+
+        </header>
+
+
+        <div class="full_section">
+            <div class="photo-section"></div>
+            <div class="new_section"></div>
+        </div>
+
+    </div>
+
+    <!-- java script -->
+    <script>
+
+        // let header = JSON.parse(localStorage.getItem("newuserInfo"))
+
+        // function true(){
+        //     alert("true")
+        // }
+
+        let worker_id = JSON.parse(localStorage.getItem("worker_info"))
+        console.log(worker_id);
+        let currentWorker = worker_id.length - 1;
+
+        let header = document.getElementById("head")
+        header.innerHTML = `<a href="../index.html"><img src="../assest/image/logo-removebg-preview.png" alt="Photo 1" width="50px"></a>
+            <a href="./worker notification.html"><button id="myButton">Notification</button></a>
+            <a href="./workerprofilepage.html"><img src="${worker_id[currentWorker]["pic"]}" alt="Photo 2"></a>`
+
+
+
+        // for (let i = 0; i < worker_id.length; i++) {
+        let content = document.createElement("div");
+        content.setAttribute("class", "background");
+
+
+        let image_div = document.createElement("div");
+        image_div.setAttribute("class", "img");
+        content.append(image_div);
+
+        let image = document.createElement("img");
+        image.setAttribute("width", "300px");
+        image.setAttribute("src", worker_id[currentWorker]["pic"]);
+        image.setAttribute("alt", "image");
+        image_div.append(image);
+
+        let details = document.createElement("div");
+        details.setAttribute("class", "down");
+
+
+        let name = document.createElement("h3");
+        name.innerText = worker_id[currentWorker]["FullName"];
+        details.append(name);
+
+        let number = document.createElement("p");
+        number.innerText = worker_id[currentWorker]["Phone_number"];
+        details.append(number);
+        content.append(details);
+
+
+
+        document.querySelector(".photo-section").prepend(content);
+        console.log(details, content)
+        // }
+
+
+        // }
+
+        //edit the profile//
+
+
+
+        // let currentsigin = JSON.parse(localStorage.getItem("user_sign"));
+        // let currentProduct = JSON.parse(localStorage.getItem("pick"));
+        // console.log(currentProduct);
+        // // current details length//
+
+
+        // // console.log(currentProduct);
+        // // current details length//
+        // let currentapplier = (currentProduct.length) - 1;
+        // let currentdata = (currentsigin.length) - 1;
+
+        // // let currentapplier = ()
+
+
+
+        // // for (let i = 0; i < currentProduct.length; i++) {
+        // let div_card = document.createElement("div");
+        // div_card.setAttribute("id", "form");
+        // div_card.setAttribute("class", "card");
+
+        // let card = document.createElement("div");
+        // card.setAttribute("class", "img");
+        // div_card.append(card);
+
+        // // let img = document.createElement("img");
+        // // img.setAttribute("src", currentProduct[currentapplier]["Url"]);
+
+        // // image.setAttribute("width", "200px");
+        // // card.append(img);
+
+        // let detail = document.createElement("div");
+        // detail.setAttribute("class", "detail");
+        // div_card.append(detail);
+
+        // let fname = document.createElement("p");
+        // fname.innerText = "Username :" + currentsigin[currentdata]["username"];
+        // detail.append(fname);
+
+
+        // let price = document.createElement("p");
+        // price.innerText = "Phonenumber :" + currentsigin[currentdata]["phone"];
+        // detail.append(price);
+
+        // let type = document.createElement("p");
+        // type.innerText = "Address :" + currentProduct[currentapplier]["address"];
+        // detail.append(type);
+
+        // let place = document.createElement("p");
+        // place.innerText = "Date :" + currentProduct[currentapplier]["date"];
+        // detail.append(place);
+
+        // let description = document.createElement("p");
+        // description.innerText = "Time : " + currentProduct[currentapplier]["time"];
+        // detail.append(description);
+        // document.querySelector(".new_section").append(div_card);
+
+        // }
+
+        function submit() {
+            window.location.href = "pages/calenderdemo.html"
+        }
+
+
+    </script>
+
+</body>
+
+</html>
