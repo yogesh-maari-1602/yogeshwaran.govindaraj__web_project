@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assest/css/index.css">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <div class="logo">
+                <img src="../assest/image/logo.jpg" width="100px"></a>
+            </div>
+            <div class="navbar">
+                <a class="name" href="../pages/form.html">Create Request</a>
+                <a href="../pages/profile.html"><img src="../assest/image/profile.png" width="70px"></a>
+
+            </div>
+        </div>
+
+        <!-- <div class="card"> -->
+        <!-- <h2>Request</h2>
+
+            <p>Title :I need ya blood</p>
+            <p>Blood Group:Frontend Developer</p>
+            <p>Description:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod.</p>
+            <p>Request Date : 12/12/12</p>
+            <p>Phone:6380843014</p>
+            <button>Close</button>
+        </div> -->
+
+        <script>
+            let id = JSON.parse(localStorage.getItem("formDetails"));
+            console.log(id);
+
+            for (let i = 0; i < id.length; i++) {
+
+                const card = document.createElement('div');
+                card.classList.add('card');
+
+                console.log(id[i]["Request"]);
+
+                const h2 = document.createElement("h2");
+                h2.innerText = id[i]["Request"];
+                h2.innerHTML = "Request";
+                card.appendChild(h2);
+
+                const p = document.createElement('p');
+                p.innerText = "Title:" + id[i]["title"];
+                card.appendChild(p);
+
+                const p1 = document.createElement('p');
+                p1.innerText = "BloodGroup: " + id[i]["bloodGroup"];
+                card.appendChild(p1);
+
+                const p2 = document.createElement('p');
+                p2.innerText = "Description" + id[i]["description"];
+                card.appendChild(p2);
+
+                const p3 = document.createElement('p');
+                p3.innerText = "RequestDate" + id[i]["requestDate"];
+                card.appendChild(p3);
+
+                const p4 = document.createElement('p');
+                p4.innerText = "PhoneNumber" + id[i]["contactNumber"];
+                card.appendChild(p4);
+
+
+                const button = document.createElement('button');
+                button.innerText = id[i]["Close"];
+                button.innerHTML = "Close";
+                card.appendChild(button);
+
+
+
+                document.querySelector("body").append(card);
+            }
+        </script>
+
+</body>
+
+</html>
