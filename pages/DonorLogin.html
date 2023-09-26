@@ -3,76 +3,79 @@
 
 <head>
     <title>Login Page</title>
-    <link rel="stylesheet" href="../assest/css/Login.css">
+    <link rel="stylesheet" href="../assets/CSS/DonorLogin.css">
 </head>
 
 <body>
     <div class="container">
+        <h1> Donor Login</h1>
+        <form id="LoginForm">
 
-        <a href="../pages/Login.html"></a><img src="../assest/image/logo.jpg" width="114px">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
 
-        <h1>Login</h1>
-        <form id="form">
+            <button onclick="submit()">Login</button>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-
-
-
-            <a href="../pages/index.html"><button class="btn" type="submit">Login</button></a>
         </form>
     </div>
 
     <script>
-        let logIn = document.getElementById("form");
-        // console.log(logIn);
-
-        let arr = [];
+        const logIn = document.getElementById("LoginForm");
 
         logIn.addEventListener("submit", (event) => {
             event.preventDefault();
+
+            let user_arr = [];
+
             let defaultData = JSON.parse(localStorage.getItem("Donorregister"));
             console.log(defaultData);
 
-            let email = document.getElementById("email").value.toLowerCase().trim();
+            let email = document.getElementById("email").value;
             let password = document.getElementById("password").value;
 
-            let match = false;
+            console.log(email, password);
+
+            //   [  { }, {}, {}, {}, {0}, {} ]
+
+            let isMatch = false;
 
             for (let i = 0; i < defaultData.length; i++) {
                 if (
-                    email == defaultData[i]["email"] &&
-                    password == defaultData[i]["password"]
+                    email == defaultData[i].email &&
+                    password == defaultData[i].password
                 ) {
-                    match = true;
-                    arr.push(defaultData[i]);
-                    window.localStorage.setItem(
-                        "logIn",
-                        JSON.stringify(arr[0]["email"])
-                    );
+                    isMatch = true;
+
+                    user_arr = email;
+                    window.localStorage.setItem("loginDonor", JSON.stringify(user_arr));
+
                     break;
 
                 } else {
-                    match = false;
+                    isMatch = false;
                 }
             }
 
-            if (match == true) {
-                alert("Success");
 
-                window.location.href = "/pages/index.html";
+            if (isMatch === true) {
+                alert("Success fully Login")
+
+                window.location.href = "./Donor Index.html";
             } else {
-                alert("Login credentials not correct");
+                alert("failed")
+                // window.location.href ="";
             }
+
         });
-
-
-
     </script>
+
+    <a href="./Donor Index.html"></a>
 </body>
 
 </html>

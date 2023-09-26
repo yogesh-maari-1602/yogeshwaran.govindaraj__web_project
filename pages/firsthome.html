@@ -11,47 +11,32 @@
 </head>
 
 <body>
+
+
+    <div class="header">
+        <a href="#default" class="logo">Blood Bank</a>
+        <div class="header-right">
+            <a class="active" href="#home">Home</a>
+            <a href="./Donor Register.html">Donor</a>
+            <a href="./Seeker Register.html">Hospital</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+    </div>
+
     <div>
-        <div class="header">
-            <div class="logo">
-                <img src="../assets/image/logo.jpg" width="114px">
-            </div>
-            <nav>
-                <ul class="menu">
-                    <li><a href="#">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#">Register</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../pages/Donor Register.html">Donor</a></li>
-                            <hr>
-                            <li><a href="../pages/Seeker Register.html">Seeker</a></li>
+        <div class="first">
+            <img class="main" src="../assets/image/download.png">
+            <h1>SAVE BLOOD<BR>
+                <p>SAVE LIVES</p>
+            </h1>
+            <h2>A DROP OF BLOOD FOR LIFE</h2>
+            <h3>LET'S BE A BLOOD DONOR FOR GOOD</h3>
+            <!-- <h4>A blood bag in time saves a life</h4> -->
+            <a href="./Donor Register.html"><button>Donor</button></a>
 
-                        </ul>
-                    </li>
-
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
         </div>
-
-
-
-
-
-
-        <div>
-            <div class="first">
-                <img class="main" src="../assets/image/download.png">
-                <h1>SAVE BLOOD<BR>
-                    <p>SAVE LIVES</p>
-                </h1>
-                <h2>A DROP OF BLOOD FOR LIFE</h2>
-                <h3>LET'S BE A BLOOD DONOR FOR GOOD</h3>
-                <!-- <h4>A blood bag in time saves a life</h4> -->
-                <a href="./Register.html"><button>Touch ME!</button></a>
-
-            </div>
-        </div>
+    </div>
     </div>
 
 
@@ -59,13 +44,13 @@
         <div class="cards">
             <div class="card-container">
                 <div class="card">
-                    <p>User Registered</p>
-                    <p class="p">0</p>
+                    <p>User Register</p>
+                    <p id="count" class="count"></p>
                 </div>
 
                 <div class="card">
-                    <p>User Using</p>
-                    <p class="p">0</p>
+                    <p>Hospital Register</p>
+                    <p id="count1" class="count1">0</p>
                 </div>
             </div>
         </div>
@@ -141,25 +126,24 @@
 
     <div class="foot">
         <footer>
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="../assets/image/logo.jpg" alt="Blood Donation Logo">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h5>Blood Bank</h5>
+                    </div>
+                    <div class="footer-links">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Donate</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class=" footer-links">
-                    <ul>
-                        <li><a href="#" class="fa fa-facebook"></a></li>
-                        <li><a href="#" class="fa fa-twitter"></a></li>
-                        <li><a href="#" class="fa fa-linkedin"></a></li>
-                        <li><a href="#" class="fa fa-instagram"></a></li>
-
-
-                    </ul>
+                <div class="footer-info">
+                    <p>&copy; 2023 Blood Donation Center</p>
+                    <p>Email: contact@blooddonation.com</p>
                 </div>
-            </div>
-            <div class="footer-address">
-                <p>123 Blood Drive Street, City</p>
-                <p>Email: info@blooddonationwebsite.com</p>
-                <p>Phone: (123) 456-7890</p>
             </div>
         </footer>
     </div>
@@ -175,6 +159,16 @@
 
         // Call the function to update the user count when the page loads
         window.addEventListener('load', updateUserCount);
+
+
+        let user = JSON.parse(localStorage.getItem("Donorregister"));
+        console.log(user.length);
+
+        document.getElementById("count").innerText = user.length;
+
+        let Hospital = JSON.parse(localStorage.getItem("SeekerRegister"));
+        console.log(user.length);
+        document.getElementById("count1").innerText = Hospital.length;
 
     </script>
 

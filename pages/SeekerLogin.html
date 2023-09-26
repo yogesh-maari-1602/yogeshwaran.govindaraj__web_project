@@ -1,78 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Login Page</title>
-    <link rel="stylesheet" href="../assest/css/SeekerLogin.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Login</title>
+    <link rel="stylesheet" href="../assets/CSS/SeekerLogin.css">
 </head>
 
 <body>
-    <div class="container">
 
-        <a href="../pages/Login.html"></a><img src="../assest/image/logo.jpg" width="114px">
+    <body>
+        <div class="container">
+            <h1> Hospital Login</h1>
+            <form id="LoginForm">
 
-        <h1>Login</h1>
-        <form id="form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <button onclick="submit()">Login</button>
 
+            </form>
+        </div>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+        <script>
+            const logIn = document.getElementById("LoginForm");
 
+            logIn.addEventListener("submit", (event) => {
+                event.preventDefault();
 
+                let user_arr = [];
 
-            <a href="../pages/index.html"><button class="btn" type="submit">Login</button></a>
-        </form>
-    </div>
+                let defaultData = JSON.parse(localStorage.getItem("SeekerRegister"));
+                console.log(defaultData);
 
-    <script>
-        let logIn = document.getElementById("form");
-        // console.log(logIn);
+                let email = document.getElementById("email").value;
+                let password = document.getElementById("password").value;
 
-        let arr = [];
+                console.log(email, password);
 
-        logIn.addEventListener("submit", (event) => {
-            event.preventDefault();
-            let defaultData = JSON.parse(localStorage.getItem("Seekerregister"));
-            console.log(defaultData);
+                //   [  { }, {}, {}, {}, {0}, {} ]
 
-            let email = document.getElementById("email").value.toLowerCase().trim();
-            let password = document.getElementById("password").value;
+                let isMatch = false;
 
-            let match = false;
+                for (let i = 0; i < defaultData.length; i++) {
+                    if (
+                        email == defaultData[i].email &&
+                        password == defaultData[i].password
+                    ) {
+                        isMatch = true;
 
-            for (let i = 0; i < defaultData.length; i++) {
-                if (
-                    email == defaultData[i]["email"] &&
-                    password == defaultData[i]["password"]
-                ) {
-                    match = true;
-                    arr.push(defaultData[i]);
-                    window.localStorage.setItem(
-                        "logIn",
-                        JSON.stringify(arr[0]["email"])
-                    );
-                    break;
+                        user_arr = email;
+                        window.localStorage.setItem("loginSeeker", JSON.stringify(user_arr));
 
-                } else {
-                    match = false;
+                        break;
+
+                    } else {
+                        isMatch = false;
+                    }
                 }
-            }
-
-            if (match == true) {
-                alert("Success");
-
-                window.location.href = "/pages/index.html";
-            } else {
-                alert("Login credentials not correct");
-            }
-        });
 
 
+                if (isMatch === true) {
+                    alert("Success fully Login")
 
-    </script>
-</body>
+                    window.location.href = "./Seeker Index.html";
+                } else {
+                    alert("failed")
+                    // window.location.href ="";
+                }
+
+            });
+        </script>
+    </body>
+    <a href="./Seeker Index.html"></a>
 
 </html>
